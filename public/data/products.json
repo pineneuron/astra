@@ -1,0 +1,1464 @@
+{
+  "categories": [
+    {
+      "id": "chicken",
+      "name": "Chicken Items",
+      "products": [
+        {
+          "id": "fresh-chicken-per-kg",
+          "name": "Fresh Chicken",
+          "slug": "fresh-chicken-per-kg",
+          "price": 310,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Fresh-Chicken.jpg",
+          "images": [
+            "/images/products/Fresh-Chicken.jpg"
+          ],
+          "shortDescription": "Premium quality fresh chicken",
+          "featured": true,
+          "bestseller": false
+        },
+        {
+          "id": "neck-and-liverless-chicken-per-kg",
+          "name": "Neck and Liverless Chicken",
+          "slug": "neck-and-liverless-chicken-per-kg",
+          "price": 330,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality neck and liverless chicken",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "boneless-breast-and-leg-per-kg",
+          "name": "Boneless Breast and Leg",
+          "slug": "boneless-breast-and-leg-per-kg",
+          "price": 570,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Boneless-Breast.jpg",
+          "images": [
+            "/images/products/Boneless-Breast.jpg"
+          ],
+          "shortDescription": "Premium quality boneless breast and leg",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-drumstick-per-kg",
+          "name": "Chicken Drumstick",
+          "slug": "chicken-drumstick-per-kg",
+          "price": 330,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Drumstick.jpg",
+          "images": [
+            "/images/products/Chicken-Drumstick.jpg"
+          ],
+          "shortDescription": "Premium quality chicken drumstick",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-gizzard-per-kg",
+          "name": "Chicken Gizzard",
+          "slug": "chicken-gizzard-per-kg",
+          "price": 310,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Gizzard.jpg",
+          "images": [
+            "/images/products/Chicken-Gizzard.jpg"
+          ],
+          "shortDescription": "Premium quality chicken gizzard",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-liver-per-kg",
+          "name": "Chicken Liver",
+          "slug": "chicken-liver-per-kg",
+          "price": 100,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Liver.jpg",
+          "images": [
+            "/images/products/Chicken-Liver.jpg"
+          ],
+          "shortDescription": "Premium quality chicken liver",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-mince-per-kg",
+          "name": "Chicken Mince",
+          "slug": "chicken-mince-per-kg",
+          "price": 540,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality chicken mince",
+          "featured": true,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-back-bone-per-kg",
+          "name": "Chicken Back Bone",
+          "slug": "chicken-back-bone-per-kg",
+          "price": 80,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Back-Bone.jpg",
+          "images": [
+            "/images/products/Chicken-Back-Bone.jpg"
+          ],
+          "shortDescription": "Premium quality chicken back bone",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-leg-and-head-per-kg",
+          "name": "Chicken Leg And Head",
+          "slug": "chicken-leg-and-head-per-kg",
+          "price": 50,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Leg.jpg",
+          "images": [
+            "/images/products/Chicken-Leg.jpg"
+          ],
+          "shortDescription": "Premium quality chicken leg and head",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-lolly-per-kg",
+          "name": "Chicken Lolly",
+          "slug": "chicken-lolly-per-kg",
+          "price": 400,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Lolly.jpg",
+          "images": [
+            "/images/products/Chicken-Lolly.jpg"
+          ],
+          "shortDescription": "Premium quality chicken lolly",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "mutton-leg-per-kg",
+          "name": "Mutton Leg",
+          "slug": "mutton-leg-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Mutton-Leg.jpg",
+          "images": [
+            "/images/products/Mutton-Leg.jpg"
+          ],
+          "shortDescription": "Premium quality mutton leg",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-hotdog-500gm",
+          "name": "Chicken Hotdog",
+          "slug": "chicken-hotdog-500gm",
+          "price": 495,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Sausage-500gm-01.jpg",
+          "images": [
+            "/images/products/Chicken-Sausage-500gm-01.jpg"
+          ],
+          "shortDescription": "Premium quality chicken hotdog",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-sausage-400gm",
+          "name": "Chicken Sausage",
+          "slug": "chicken-sausage-400gm",
+          "price": 395,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Sausage-400gm.jpg",
+          "images": [
+            "/images/products/Chicken-Sausage-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken sausage",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-sausage-200gm",
+          "name": "Chicken Sausage",
+          "slug": "chicken-sausage-200gm",
+          "price": 205,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Sausage-200gm.jpg",
+          "images": [
+            "/images/products/Chicken-Sausage-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken sausage",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-cocktail-sausage-500gm",
+          "name": "Chicken Cocktail Sausage",
+          "slug": "chicken-cocktail-sausage-500gm",
+          "price": 495,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Sausage-500gm-01.jpg",
+          "images": [
+            "/images/products/Chicken-Sausage-500gm-01.jpg",
+            "/images/products/Chicken-Sausage-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken cocktail sausage",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-breakfast-sausage-400gm",
+          "name": "Chicken Breakfast Sausage",
+          "slug": "chicken-breakfast-sausage-400gm",
+          "price": 395,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality chicken breakfast sausage",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-salamipepperoni-200gm",
+          "name": "Chicken Salami/Pepperoni",
+          "slug": "chicken-salamipepperoni-200gm",
+          "price": 215,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Pepperoni-Salami-200gm.jpg",
+          "images": [
+            "/images/products/Chicken-Pepperoni-Salami-200gm.jpg",
+            "/images/products/Chicken-Salami-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken salami/pepperoni",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-salamipepperoni-1-kg",
+          "name": "Chicken Salami/Pepperoni",
+          "slug": "chicken-salamipepperoni-1-kg",
+          "price": 1070,
+          "unit": "1 kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality chicken salami/pepperoni",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-ham-slice-400gm",
+          "name": "Chicken Ham Slice",
+          "slug": "chicken-ham-slice-400gm",
+          "price": 500,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality chicken ham slice",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-meat-ball-1kg",
+          "name": "Chicken Meat Ball",
+          "slug": "chicken-meat-ball-1kg",
+          "price": 800,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality chicken meat ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-meat-ball-400gm",
+          "name": "Chicken Meat Ball",
+          "slug": "chicken-meat-ball-400gm",
+          "price": 320,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Meatball-400gm-01.jpg",
+          "images": [
+            "/images/products/Chicken-Meatball-400gm-01.jpg",
+            "/images/products/Chicken-Meatball-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken meat ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-meat-ball-200gm",
+          "name": "Chicken Meat Ball",
+          "slug": "chicken-meat-ball-200gm",
+          "price": 170,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Meatball-200gm.jpg",
+          "images": [
+            "/images/products/Chicken-Meatball-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken meat ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-bratwurst-sausage-400gm",
+          "name": "Chicken Bratwurst Sausage",
+          "slug": "chicken-bratwurst-sausage-400gm",
+          "price": 455,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality chicken bratwurst sausage",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-seekh-kebab-400gm",
+          "name": "Chicken Seekh  Kebab",
+          "slug": "chicken-seekh-kebab-400gm",
+          "price": 470,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Seekh-Kebab-400gm.jpg",
+          "images": [
+            "/images/products/Chicken-Seekh-Kebab-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken seekh  kebab",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-seekh-kebab-200gm",
+          "name": "Chicken Seekh  Kebab",
+          "slug": "chicken-seekh-kebab-200gm",
+          "price": 235,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Seekh-Kebab-200gm.jpg",
+          "images": [
+            "/images/products/Chicken-Seekh-Kebab-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken seekh  kebab",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-mince-500gm",
+          "name": "Chicken Mince",
+          "slug": "chicken-mince-500gm",
+          "price": 450,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Mince-500gm.jpg",
+          "images": [
+            "/images/products/Chicken-Mince-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken mince",
+          "featured": true,
+          "bestseller": false
+        },
+        {
+          "id": "smokey-chicken-breastleg-500gm",
+          "name": "Smokey Chicken Breast/Leg",
+          "slug": "smokey-chicken-breastleg-500gm",
+          "price": 750,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality smokey chicken breast/leg",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-mince-500gm",
+          "name": "Buff Mince",
+          "slug": "buff-mince-500gm",
+          "price": 400,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Buff_mince-500gm.jpg",
+          "images": [
+            "/images/products/Buff_mince-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality buff mince",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-mince-500gm",
+          "name": "Pork Mince",
+          "slug": "pork-mince-500gm",
+          "price": 600,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Buff-Mince-500gm.jpg",
+          "images": [
+            "/images/products/Buff-Mince-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality pork mince",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-momo-50-pcs-pkt",
+          "name": "Chicken MoMo 50 Pcs",
+          "slug": "chicken-momo-50-pcs-pkt",
+          "price": 600,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Momo-50pcs.jpg",
+          "images": [
+            "/images/products/Chicken-Momo-50pcs.jpg"
+          ],
+          "shortDescription": "Premium quality chicken momo 50 pcs",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-momo20-pcs-pkt",
+          "name": "Chicken MoMo20 Pcs",
+          "slug": "chicken-momo20-pcs-pkt",
+          "price": 250,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Momo-20pcs.jpg",
+          "images": [
+            "/images/products/Chicken-Momo-20pcs.jpg"
+          ],
+          "shortDescription": "Premium quality chicken momo20 pcs",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-burger-patty-20pcs",
+          "name": "Chicken Burger Patty",
+          "slug": "chicken-burger-patty-20pcs",
+          "price": 950,
+          "unit": "20pcs",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Burger-Patty-20pcs.jpg",
+          "images": [
+            "/images/products/Chicken-Burger-Patty-20pcs.jpg"
+          ],
+          "shortDescription": "Premium quality chicken burger patty",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-burger-patty-10pcs",
+          "name": "Chicken Burger Patty",
+          "slug": "chicken-burger-patty-10pcs",
+          "price": 500,
+          "unit": "10Pcs",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Burger-Patty-10pcs.jpg",
+          "images": [
+            "/images/products/Chicken-Burger-Patty-10pcs.jpg"
+          ],
+          "shortDescription": "Premium quality chicken burger patty",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-burger-patty-4pcs",
+          "name": "Chicken Burger Patty",
+          "slug": "chicken-burger-patty-4pcs",
+          "price": 250,
+          "unit": "4Pcs",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Burger-Patty-4pcs.jpg",
+          "images": [
+            "/images/products/Chicken-Burger-Patty-4pcs.jpg"
+          ],
+          "shortDescription": "Premium quality chicken burger patty",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-cutlet-6pcs-400gm",
+          "name": "Chicken Cutlet (6Pcs)",
+          "slug": "chicken-cutlet-6pcs-400gm",
+          "price": 380,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Cutlet-400gm-01.jpg",
+          "images": [
+            "/images/products/Chicken-Cutlet-400gm-01.jpg",
+            "/images/products/Chicken-Cutlet-400gm-02.jpg"
+          ],
+          "shortDescription": "Premium quality chicken cutlet (6pcs)",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "chicken-nuggets-1kg",
+          "name": "Chicken Nuggets",
+          "slug": "chicken-nuggets-1kg",
+          "price": 850,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Nuggets-1kg.jpg",
+          "images": [
+            "/images/products/Chicken-Nuggets-1kg.jpg"
+          ],
+          "shortDescription": "Premium quality chicken nuggets",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-nuggets-500gm",
+          "name": "Chicken Nuggets",
+          "slug": "chicken-nuggets-500gm",
+          "price": 425,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Nuggets-500gm-01.jpg",
+          "images": [
+            "/images/products/Chicken-Nuggets-500gm-01.jpg",
+            "/images/products/Chicken-Nuggets-500gm-02.jpg"
+          ],
+          "shortDescription": "Premium quality chicken nuggets",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "chicken-nuggets-200gm",
+          "name": "Chicken Nuggets",
+          "slug": "chicken-nuggets-200gm",
+          "price": 180,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Chicken-Nuggets-200gm.jpg",
+          "images": [
+            "/images/products/Chicken-Nuggets-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality chicken nuggets",
+          "featured": true,
+          "bestseller": true
+        }
+      ]
+    },
+    {
+      "id": "mutton-buff",
+      "name": "Mutton & Buff Items",
+      "products": [
+        {
+          "id": "fresh-mutton-per-kg",
+          "name": "Fresh Mutton",
+          "slug": "fresh-mutton-per-kg",
+          "price": 1350,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Fresh-Mutton.jpg",
+          "images": [
+            "/images/products/Fresh-Mutton.jpg"
+          ],
+          "shortDescription": "Premium quality fresh mutton",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "mutton-per-kg",
+          "name": "Mutton",
+          "slug": "mutton-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Fresh-Mutton.jpg",
+          "images": [
+            "/images/products/Fresh-Mutton.jpg"
+          ],
+          "shortDescription": "Premium quality mutton",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "mutton-boneless-per-kg",
+          "name": "Mutton Boneless",
+          "slug": "mutton-boneless-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality mutton boneless",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "mutton-head-per-kg",
+          "name": "Mutton Head",
+          "slug": "mutton-head-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality mutton head",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "vutton-per-kg",
+          "name": "Vutton",
+          "slug": "vutton-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/products/Vutton.jpg",
+          "images": [
+            "/images/products/Vutton.jpg"
+          ],
+          "shortDescription": "Premium quality vutton",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "boka-per-kg",
+          "name": "Boka",
+          "slug": "boka-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality boka",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "frozen-mutton-per-kg",
+          "name": "Frozen Mutton",
+          "slug": "frozen-mutton-per-kg",
+          "price": 0,
+          "unit": "per kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality frozen mutton",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-hotdog-sausage-500gm",
+          "name": "Buff Hotdog Sausage",
+          "slug": "buff-hotdog-sausage-500gm",
+          "price": 440,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Buff-Sausage-500gm.jpg",
+          "images": [
+            "/images/products/Buff-Sausage-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality buff hotdog sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-sausage-400gm",
+          "name": "Buff Sausage",
+          "slug": "buff-sausage-400gm",
+          "price": 360,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Buff-Sausage-400gm.jpg",
+          "images": [
+            "/images/products/Buff-Sausage-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality buff sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-sausage-200gm",
+          "name": "Buff Sausage",
+          "slug": "buff-sausage-200gm",
+          "price": 185,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Buff-Sausage-200gm.jpg",
+          "images": [
+            "/images/products/Buff-Sausage-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality buff sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-salami-roll-1kg",
+          "name": "Buff Salami (Roll)",
+          "slug": "buff-salami-roll-1kg",
+          "price": 950,
+          "unit": "1Kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality buff salami (roll)",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-salami-200gm",
+          "name": "Buff Salami",
+          "slug": "buff-salami-200gm",
+          "price": 190,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality buff salami",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "buff-momo-50-pcs-pkt",
+          "name": "Buff MoMo 50 Pcs",
+          "slug": "buff-momo-50-pcs-pkt",
+          "price": 550,
+          "unit": "Pkt",
+          "discountPercent": 0,
+          "image": "/images/products/Buff-Momo-50pcs.jpg",
+          "images": [
+            "/images/products/Buff-Momo-50pcs.jpg"
+          ],
+          "shortDescription": "Premium quality buff momo 50 pcs",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "buff-momo-20-pcs-pkt",
+          "name": "Buff MoMo 20 Pcs",
+          "slug": "buff-momo-20-pcs-pkt",
+          "price": 225,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/products/Buff-Momo-20pcs.jpg",
+          "images": [
+            "/images/products/Buff-Momo-20pcs.jpg"
+          ],
+          "shortDescription": "Premium quality buff momo 20 pcs",
+          "featured": true,
+          "bestseller": true
+        }
+      ]
+    },
+    {
+      "id": "pork",
+      "name": "Pork Items",
+      "products": [
+        {
+          "id": "pork-sausage-400gm",
+          "name": "Pork Sausage",
+          "slug": "pork-sausage-400gm",
+          "price": 400,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Sausage-400gm-02.jpg",
+          "images": [
+            "/images/products/Pork-Sausage-400gm-02.jpg"
+          ],
+          "shortDescription": "Premium quality pork sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-sausage-200gm",
+          "name": "Pork Sausage",
+          "slug": "pork-sausage-200gm",
+          "price": 205,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Sausage-200gm-01.jpg",
+          "images": [
+            "/images/products/Pork-Sausage-200gm-01.jpg"
+          ],
+          "shortDescription": "Premium quality pork sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-ham-slice-400gm",
+          "name": "Pork Ham Slice",
+          "slug": "pork-ham-slice-400gm",
+          "price": 550,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Ham-400gm.jpg",
+          "images": [
+            "/images/products/Pork-Ham-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality pork ham slice",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "bacon-slice-1kg",
+          "name": "Bacon Slice",
+          "slug": "bacon-slice-1kg",
+          "price": 1850,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Bacon-1kg.jpg",
+          "images": [
+            "/images/products/Pork-Bacon-1kg.jpg"
+          ],
+          "shortDescription": "Premium quality bacon slice",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "bacon-slice-400gm",
+          "name": "Bacon Slice",
+          "slug": "bacon-slice-400gm",
+          "price": 750,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Bacon-400gm.jpg",
+          "images": [
+            "/images/products/Pork-Bacon-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality bacon slice",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "bacon-slice-200gm",
+          "name": "Bacon Slice",
+          "slug": "bacon-slice-200gm",
+          "price": 380,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Bacon-200gm.jpg",
+          "images": [
+            "/images/products/Pork-Bacon-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality bacon slice",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-chop-1kg",
+          "name": "Pork Chop",
+          "slug": "pork-chop-1kg",
+          "price": 1500,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality pork chop",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-belly-with-skin-1kg",
+          "name": "Pork Belly With Skin",
+          "slug": "pork-belly-with-skin-1kg",
+          "price": 904,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality pork belly with skin",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-belly-slice-500gm",
+          "name": "Pork Belly Slice",
+          "slug": "pork-belly-slice-500gm",
+          "price": 450,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Belly-Slice-500gm.jpg",
+          "images": [
+            "/images/products/Pork-Belly-Slice-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality pork belly slice",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-pepperoni-salami-roll-1kg",
+          "name": "Pork Pepperoni Salami (Roll)",
+          "slug": "pork-pepperoni-salami-roll-1kg",
+          "price": 1350,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality pork pepperoni salami (roll)",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-pepperoni-salami-roll-200gm",
+          "name": "Pork Pepperoni Salami (Roll)",
+          "slug": "pork-pepperoni-salami-roll-200gm",
+          "price": 275,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality pork pepperoni salami (roll)",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "pork-momo-50-pcs-pkt",
+          "name": "Pork MoMo 50 Pcs",
+          "slug": "pork-momo-50-pcs-pkt",
+          "price": 700,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality pork momo 50 pcs",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "pork-momo-20-pcs-pkt",
+          "name": "Pork MoMo 20 Pcs",
+          "slug": "pork-momo-20-pcs-pkt",
+          "price": 290,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/products/Pork-Momo-20pcs.jpg",
+          "images": [
+            "/images/products/Pork-Momo-20pcs.jpg"
+          ],
+          "shortDescription": "Premium quality pork momo 20 pcs",
+          "featured": true,
+          "bestseller": true
+        }
+      ]
+    },
+    {
+      "id": "vegetarian",
+      "name": "Vegetarian Items",
+      "products": [
+        {
+          "id": "veg-momo-50-pcs-pkt",
+          "name": "Veg MoMo 50 Pcs",
+          "slug": "veg-momo-50-pcs-pkt",
+          "price": 480,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Momo-Mashroom-50pcs.jpg",
+          "images": [
+            "/images/products/Veg-Momo-Mashroom-50pcs.jpg"
+          ],
+          "shortDescription": "Premium quality veg momo 50 pcs",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "veg-momo-20-pcs-pkt",
+          "name": "Veg MoMo 20 Pcs",
+          "slug": "veg-momo-20-pcs-pkt",
+          "price": 200,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Momo-Mashroom-20pcs.jpg",
+          "images": [
+            "/images/products/Veg-Momo-Mashroom-20pcs.jpg"
+          ],
+          "shortDescription": "Premium quality veg momo 20 pcs",
+          "featured": true,
+          "bestseller": true
+        },
+        {
+          "id": "veg-sausage-400gm",
+          "name": "Veg Sausage",
+          "slug": "veg-sausage-400gm",
+          "price": 300,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality veg sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-burger-patty-20pcs",
+          "name": "Veg Burger Patty",
+          "slug": "veg-burger-patty-20pcs",
+          "price": 650,
+          "unit": "20Pcs",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Burger-Patty-20pcs.jpg",
+          "images": [
+            "/images/products/Veg-Burger-Patty-20pcs.jpg"
+          ],
+          "shortDescription": "Premium quality veg burger patty",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-burger-patty-10pcs",
+          "name": "Veg Burger Patty",
+          "slug": "veg-burger-patty-10pcs",
+          "price": 350,
+          "unit": "10Pcs",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Burger-Patty-10pcs.jpg",
+          "images": [
+            "/images/products/Veg-Burger-Patty-10pcs.jpg"
+          ],
+          "shortDescription": "Premium quality veg burger patty",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-burger-patty-4pcs",
+          "name": "Veg Burger Patty",
+          "slug": "veg-burger-patty-4pcs",
+          "price": 160,
+          "unit": "4Pcs",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Burger-Patty-4pcs.jpg",
+          "images": [
+            "/images/products/Veg-Burger-Patty-4pcs.jpg"
+          ],
+          "shortDescription": "Premium quality veg burger patty",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-cutlet-300gm",
+          "name": "Veg Cutlet",
+          "slug": "veg-cutlet-300gm",
+          "price": 285,
+          "unit": "300gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality veg cutlet",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-nuggets-1kg",
+          "name": "Veg Nuggets",
+          "slug": "veg-nuggets-1kg",
+          "price": 700,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Nuggets-1kg.jpg",
+          "images": [
+            "/images/products/Veg-Nuggets-1kg.jpg"
+          ],
+          "shortDescription": "Premium quality veg nuggets",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-nuggets-500gm",
+          "name": "Veg Nuggets",
+          "slug": "veg-nuggets-500gm",
+          "price": 350,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Nuggets-500gm.jpg",
+          "images": [
+            "/images/products/Veg-Nuggets-500gm.jpg"
+          ],
+          "shortDescription": "Premium quality veg nuggets",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "veg-nuggets-200gm",
+          "name": "Veg Nuggets",
+          "slug": "veg-nuggets-200gm",
+          "price": 150,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Veg-Nuggets-200gm-01.jpg",
+          "images": [
+            "/images/products/Veg-Nuggets-200gm-01.jpg",
+            "/images/products/Veg-Nuggets-200gm-02.jpg"
+          ],
+          "shortDescription": "Premium quality veg nuggets",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "green-peas-1kg",
+          "name": "Green Peas",
+          "slug": "green-peas-1kg",
+          "price": 200,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality green peas",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "sweet-corn-1kg",
+          "name": "Sweet Corn",
+          "slug": "sweet-corn-1kg",
+          "price": 200,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality sweet corn",
+          "featured": false,
+          "bestseller": false
+        }
+      ]
+    },
+    {
+      "id": "fish",
+      "name": "Fish Items",
+      "products": [
+        {
+          "id": "fish-sausage-400gm",
+          "name": "Fish Sausage",
+          "slug": "fish-sausage-400gm",
+          "price": 360,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Fish-Sausage-400gm.jpg",
+          "images": [
+            "/images/products/Fish-Sausage-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality fish sausage",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-cutlet-300gm",
+          "name": "Fish Cutlet",
+          "slug": "fish-cutlet-300gm",
+          "price": 450,
+          "unit": "300gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality fish cutlet",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-finger-1kg",
+          "name": "Fish Finger",
+          "slug": "fish-finger-1kg",
+          "price": 900,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality fish finger",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-finger-400gm",
+          "name": "Fish Finger",
+          "slug": "fish-finger-400gm",
+          "price": 370,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality fish finger",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-finger-200gm",
+          "name": "Fish Finger",
+          "slug": "fish-finger-200gm",
+          "price": 190,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Fish-Finger-200gm.jpg",
+          "images": [
+            "/images/products/Fish-Finger-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality fish finger",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-ball-1kg",
+          "name": "Fish Ball",
+          "slug": "fish-ball-1kg",
+          "price": 900,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality fish ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-ball-400gm",
+          "name": "Fish Ball",
+          "slug": "fish-ball-400gm",
+          "price": 360,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Fish-Ball-400gm.jpg",
+          "images": [
+            "/images/products/Fish-Ball-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality fish ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "fish-ball-200gm",
+          "name": "Fish Ball",
+          "slug": "fish-ball-200gm",
+          "price": 190,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Fish-Ball-200gm.jpg",
+          "images": [
+            "/images/products/Fish-Ball-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality fish ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "basa-fish-1kg",
+          "name": "Basa Fish",
+          "slug": "basa-fish-1kg",
+          "price": 400,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/products/Basa-Fish-1kg.jpg",
+          "images": [
+            "/images/products/Basa-Fish-1kg.jpg",
+            "/images/products/Basa-Frozen-Steak-1kg.jpg"
+          ],
+          "shortDescription": "Premium quality basa fish",
+          "featured": false,
+          "bestseller": false
+        }
+      ]
+    },
+    {
+      "id": "frozen-snacks",
+      "name": "Frozen Snacks",
+      "products": [
+        {
+          "id": "french-fry-1-kg-pkt",
+          "name": "French fry 1 Kg",
+          "slug": "french-fry-1-kg-pkt",
+          "price": 270,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality french fry 1 kg",
+          "featured": false,
+          "bestseller": true
+        },
+        {
+          "id": "french-fry-25-kg-pkt",
+          "name": "French fry 2.5 Kg",
+          "slug": "french-fry-25-kg-pkt",
+          "price": 675,
+          "unit": "PKT",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality french fry 2.5 kg",
+          "featured": false,
+          "bestseller": true
+        },
+        {
+          "id": "aalo-tikki-1kg",
+          "name": "Aalo Tikki",
+          "slug": "aalo-tikki-1kg",
+          "price": 500,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/products/Aloo-Tikki-500gm-02.jpg",
+          "images": [
+            "/images/products/Aloo-Tikki-500gm-02.jpg"
+          ],
+          "shortDescription": "Premium quality aalo tikki",
+          "featured": true,
+          "bestseller": false
+        },
+        {
+          "id": "aalo-tikki-500gm",
+          "name": "Aalo Tikki",
+          "slug": "aalo-tikki-500gm",
+          "price": 260,
+          "unit": "500gm",
+          "discountPercent": 0,
+          "image": "/images/products/Aloo-Tikki-500gm-01.jpg",
+          "images": [
+            "/images/products/Aloo-Tikki-500gm-01.jpg"
+          ],
+          "shortDescription": "Premium quality aalo tikki",
+          "featured": true,
+          "bestseller": false
+        },
+        {
+          "id": "aalo-tikki-200gm",
+          "name": "Aalo Tikki",
+          "slug": "aalo-tikki-200gm",
+          "price": 110,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Aloo-Tikki-200gm.jpg",
+          "images": [
+            "/images/products/Aloo-Tikki-200gm.jpg"
+          ],
+          "shortDescription": "Premium quality aalo tikki",
+          "featured": true,
+          "bestseller": false
+        }
+      ]
+    },
+    {
+      "id": "ready-to-cook",
+      "name": "Ready to Cook",
+      "products": [
+        {
+          "id": "cheese-ball-1kg",
+          "name": "Cheese Ball",
+          "slug": "cheese-ball-1kg",
+          "price": 600,
+          "unit": "1kg",
+          "discountPercent": 0,
+          "image": "/images/placeholder.png",
+          "images": [
+            "/images/placeholder.png"
+          ],
+          "shortDescription": "Premium quality cheese ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "cheese-ball-400gm",
+          "name": "Cheese Ball",
+          "slug": "cheese-ball-400gm",
+          "price": 240,
+          "unit": "400gm",
+          "discountPercent": 0,
+          "image": "/images/products/Cheese-Ball-400gm.jpg",
+          "images": [
+            "/images/products/Cheese-Ball-400gm.jpg"
+          ],
+          "shortDescription": "Premium quality cheese ball",
+          "featured": false,
+          "bestseller": false
+        },
+        {
+          "id": "cheese-ball-200gm",
+          "name": "Cheese Ball",
+          "slug": "cheese-ball-200gm",
+          "price": 130,
+          "unit": "200gm",
+          "discountPercent": 0,
+          "image": "/images/products/Cheese-Ball-200gm-01.jpg",
+          "images": [
+            "/images/products/Cheese-Ball-200gm-01.jpg",
+            "/images/products/Cheese-Ball-200gm-02.jpg"
+          ],
+          "shortDescription": "Premium quality cheese ball",
+          "featured": false,
+          "bestseller": false
+        }
+      ]
+    }
+  ]
+}

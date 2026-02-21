@@ -1,0 +1,16 @@
+// PM2 config for VPS production. Copy to ecosystem.config.cjs on the server and adjust paths.
+// Start: pm2 start ecosystem.config.cjs
+
+module.exports = {
+  apps: [
+    {
+      name: 'astra',
+      script: 'node_modules/next/dist/bin/next',
+      args: 'start',
+      cwd: process.cwd(),
+      env_file: '.env',
+      instances: 1,
+      exec_mode: 'fork',
+    },
+  ],
+}
