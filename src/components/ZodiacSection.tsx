@@ -43,7 +43,6 @@ function ZodiacWheel() {
   const outerR = 202;   // outermost edge
   const ringOuter = 195; // outer illustration ring boundary
   const ringInner = 100; // inner illustration ring boundary
-  const innerR = 90;     // inner golden circle
   const centerR = 74;    // dark center
 
   const toRad = (deg: number) => (deg * Math.PI) / 180;
