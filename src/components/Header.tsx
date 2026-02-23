@@ -80,7 +80,7 @@ export default function Header({ variant = 'home' }: HeaderProps) {
               alt="Astra"
               width={81}
               height={82}
-              className="object-contain h-14 w-auto lg:h-[82px]"
+              className="object-cover w-auto h-[60px] lg:h-[82px]"
               priority
             />
           </Link>
@@ -211,11 +211,12 @@ export default function Header({ variant = 'home' }: HeaderProps) {
         <button type="button" aria-label="Close menu" className="absolute inset-0 bg-black/40" onClick={() => setMenuOpen(false)} />
         <div className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-xl flex flex-col transition-transform duration-300 ease-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+            <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center">
+              <Image src="/images/astra-logo.svg" alt="Astra" width={64} height={64} className="object-contain h-10 w-auto" />
+            </Link>
             <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="p-2 rounded-md hover:bg-gray-100">
               <HamburgerIcon open />
             </button>
-            <span className="text-lg font-semibold text-gray-900">Menu</span>
-            <div className="w-10" />
           </div>
           <div className="flex-1 overflow-y-auto py-4">
             <nav className="py-2">
