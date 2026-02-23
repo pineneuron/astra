@@ -80,7 +80,7 @@ export default function HeroBanner() {
       </Swiper>
 
       {/* Torn bottom edge */}
-      <div className="absolute bottom-0 left-0 w-full h-[43.526px] z-10 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-full h-3 lg:h-[42.526px] z-10 pointer-events-none">
         <Image
           src="/images/pattern-hero.png"
           alt=""

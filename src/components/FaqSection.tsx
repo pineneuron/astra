@@ -106,7 +106,7 @@ export default function FaqSection() {
   const faqs = faqData[activeCategory] ?? [];
 
   return (
-    <section className="relative w-full overflow-hidden py-16">
+    <section className="relative w-full overflow-hidden py-10 sm:py-14 lg:py-16">
       {/* Background */}
       <Image
         src="/images/bg-faq.jpg"
@@ -116,21 +116,21 @@ export default function FaqSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6">
         {/* Heading */}
-        <h2 className="tsf-font-larken text-black text-[36px] text-center mb-10">
+        <h2 className="tsf-font-larken text-black text-[26px] sm:text-[30px] lg:text-[36px] text-center mb-6 sm:mb-8 lg:mb-10">
           Frequently Asked Questions
         </h2>
 
-        {/* Card */}
-        <div className="bg-[#ffeece] rounded-[20px] p-6 flex gap-5">
-          {/* Left: category tabs */}
-          <div className="flex flex-col gap-3 w-[260px] shrink-0">
+        {/* Card: column on mobile (tabs row + accordion), row on desktop */}
+        <div className="bg-[#ffeece] rounded-[16px] lg:rounded-[20px] p-4 sm:p-6 flex flex-col lg:flex-row gap-4 lg:gap-5">
+          {/* Category tabs: horizontal scroll on mobile, vertical sidebar on desktop */}
+          <div className="flex lg:flex-col gap-2 lg:gap-3 overflow-x-auto lg:overflow-visible pb-1 lg:pb-0 lg:w-[260px] lg:shrink-0">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => { setActiveCategory(cat); setOpenIndex(0); }}
-                className={`w-full h-[60px] rounded-[10px] tsf-font-public-sans text-[18px] transition-all ${
+                className={`shrink-0 lg:w-full h-[48px] lg:h-[60px] px-4 lg:px-0 rounded-[10px] tsf-font-public-sans text-[15px] lg:text-[18px] transition-all ${
                   activeCategory === cat
                     ? 'text-white'
                     : 'bg-white text-black hover:bg-orange-50'
@@ -146,15 +146,15 @@ export default function FaqSection() {
             ))}
           </div>
 
-          {/* Right: accordion */}
-          <div className="flex-1 bg-white rounded-[20px] px-8 py-6 flex flex-col gap-0">
+          {/* Accordion */}
+          <div className="flex-1 min-w-0 bg-white rounded-[16px] lg:rounded-[20px] px-4 sm:px-6 lg:px-8 py-4 lg:py-6 flex flex-col gap-0">
             {faqs.map((item, i) => (
               <div key={i} className="border-b border-[#e8e8e8] last:border-0">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between py-5 text-left gap-4"
+                  className="w-full flex items-center justify-between py-4 sm:py-5 text-left gap-3"
                 >
-                  <span className="tsf-font-public-sans text-[20px] text-black font-normal">
+                  <span className="tsf-font-public-sans text-[16px] sm:text-[18px] lg:text-[20px] text-black font-normal text-left">
                     {item.q}
                   </span>
                   <Image
@@ -170,7 +170,7 @@ export default function FaqSection() {
                   />
                 </button>
                 {openIndex === i && (
-                  <p className="tsf-font-larken text-[#222] text-[18px] leading-[28px] pb-5">
+                  <p className="tsf-font-larken text-[#222] text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] pb-4 lg:pb-5">
                     {item.a}
                   </p>
                 )}

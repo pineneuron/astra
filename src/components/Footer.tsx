@@ -39,10 +39,10 @@ export default function Footer() {
       {/* Background: dark base + leather texture */}
       <div className="absolute inset-0 bg-[#002854]" />
       <Image
-        src="/images/footer-bg.png"
+        src="/images/footer-bg.svg"
         alt=""
         fill
-        className="object-cover opacity-80 pointer-events-none"
+        className="object-cover opacity-80 pointer-events-none rotate-180 sm:rotate-0"
         aria-hidden
       />
 

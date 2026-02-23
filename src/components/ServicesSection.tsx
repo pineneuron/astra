@@ -21,7 +21,7 @@ export default function ServicesSection() {
 
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header row */}
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between flex-col lg:flex-row mb-10">
           <h2 className="tsf-font-larken text-black text-[36px]">
             Our Latest Services
           </h2>
@@ -35,7 +35,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {services.map((svc) => (
             <div
               key={svc.title}
@@ -66,9 +66,9 @@ export default function ServicesSection() {
 
                 {/* Price + Stars row */}
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="tsf-font-public-sans font-semibold text-[#d97706] text-[18px] tracking-[-0.05em]">
+                  {/* <span className="tsf-font-public-sans font-semibold text-[#d97706] text-[18px] tracking-[-0.05em]">
                     {svc.price}
-                  </span>
+                  </span> */}
                   <div className="flex items-center gap-1">
                     <Image src="/images/icon-stars.svg" alt="5 stars" width={80} height={14} />
                     <span className="tsf-font-public-sans text-[#575d73] text-[13px]">(1.5k)</span>
@@ -77,8 +77,8 @@ export default function ServicesSection() {
 
                 {/* Order Now button */}
                 <Link
-                  href={svc.href}
-                  className="mt-auto flex items-center justify-center h-[46px] rounded-[2px] text-white tsf-font-larken-medium text-[13px] uppercase tracking-wide"
+                  href="#"
+                  className="mt-auto flex items-center justify-center h-[46px] rounded-[2px] text-white tsf-font-larken-medium text-[13px] uppercase tracking-wide cursor-pointer"
                   style={{
                     background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))',
                   }}

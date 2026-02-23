@@ -19,12 +19,12 @@ export default function CategoryStrip() {
       }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
           {categories.map((cat) => (
             <Link
               key={cat.label}
-              href={cat.href}
-              className="flex flex-col items-center gap-3 group"
+              href="#"
+              className="flex flex-col items-center gap-3 group cursor-pointer"
             >
               <div className="relative w-[140px] h-[140px] rounded-full overflow-hidden shrink-0 transition-transform group-hover:scale-105">
                 <Image

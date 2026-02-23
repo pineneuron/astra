@@ -33,7 +33,7 @@ export default function EventsSection() {
 
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header row */}
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between flex-col lg:flex-row mb-10">
           <h2 className="tsf-font-larken text-black text-[36px]">
             Our Latest Events
           </h2>
@@ -102,12 +102,12 @@ export default function EventsSection() {
                 {/* Divider + View Details */}
                 <div className="border-t border-[#d9d9d9] pt-4 flex items-center justify-between">
                   <Link
-                    href={event.href}
-                    className={`tsf-font-public-sans font-medium text-[16px] underline hover:opacity-70 transition-colors duration-300 ${active ? 'text-white' : 'text-black'}`}
+                    href="#"
+                    className={`tsf-font-public-sans font-medium text-[16px] underline hover:opacity-70 transition-colors duration-300 cursor-pointer ${active ? 'text-white' : 'text-black'}`}
                   >
                     View Event Details
                   </Link>
-                  <Link href={event.href} aria-label="View event details" className="shrink-0">
+                  <Link href="#" aria-label="View event details" className="shrink-0 cursor-pointer">
                     <Image
                       src={active ? '/images/icon-arrow-circle-light.svg' : '/images/icon-arrow-circle-dark.svg'}
                       alt=""

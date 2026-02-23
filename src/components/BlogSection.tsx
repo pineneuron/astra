@@ -30,7 +30,7 @@ export default function BlogSection() {
     <section className="w-full bg-white pt-[65px] pb-[77px]">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header row */}
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between flex-col lg:flex-row mb-10">
           <h2 className="tsf-font-larken text-black text-[36px]">
             Our Latest Blogs
           </h2>
@@ -85,15 +85,15 @@ export default function BlogSection() {
                 {/* Read More */}
                 <div className="flex items-center justify-between mt-auto">
                   <Link
-                    href={post.href}
-                    className="tsf-font-public-sans font-medium text-[14px] text-black underline hover:opacity-70 transition-opacity"
+                    href="#"
+                    className="tsf-font-public-sans font-medium text-[14px] text-black underline hover:opacity-70 transition-opacity cursor-pointer"
                   >
                     Read More
                   </Link>
                   <Link
-                    href={post.href}
+                    href="#"
                     aria-label="Read more"
-                    className="shrink-0"
+                    className="shrink-0 cursor-pointer"
                   >
                     <Image
                       src="/images/icon-arrow-dark.svg"

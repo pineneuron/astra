@@ -110,8 +110,8 @@ export default function BookingSection() {
                 style={{ background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))' }}
               >
                 Book Appointment
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-black/20 shrink-0">
-                  <Image src="/images/icon-arrow-booking.svg" alt="" width={14} height={14} />
+                <span className="flex items-center justify-center w-8 h-8 shrink-0">
+                  <Image src="/images/icon-arrow-brown.svg" alt="" width={32} height={32} />
                 </span>
               </button>
             </div>
