@@ -72,115 +72,113 @@ export default function Header({ variant = 'home' }: HeaderProps) {
     <header>
       <div className="bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
-          <div className="h-18 lg:h-[110px] flex items-center gap-4 lg:gap-6">
-
-          <Link href="/" className="flex-shrink-0">
+          <div className="h-[60px] lg:h-[100px] flex items-center gap-4 lg:gap-6">
+          <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
-              src="/images/astra-logo.svg"
+              src="/images/logo-horizontal.svg"
               alt="Astra"
-              width={81}
-              height={82}
-              className="object-cover w-auto h-[60px] lg:h-[82px]"
+              width={368}
+              height={100}
+              className="object-contain object-left h-11 sm:h-12 lg:h-14 w-auto max-w-[160px] sm:max-w-[160px] lg:max-w-[220px]"
               priority
             />
           </Link>
 
-          <div className="hidden lg:flex flex-1 justify-center">
-            <div className="relative w-full max-w-[529px]">
-              <input
-                type="search"
-                placeholder="Search product"
-                className="w-full h-[44px] rounded-[50px] border border-[#b4b9c9] bg-white pl-5 pr-11 text-[15px] text-gray-700 placeholder-[#948d8d] outline-none focus:border-[#f37335]"
-              />
-              <Image
-                src="/images/icon-search.svg"
-                alt="search"
-                width={16}
-                height={16}
-                className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
-              />
+            <div className="hidden lg:flex flex-1 justify-center">
+              <div className="relative w-full max-w-[529px]">
+                <input
+                  type="search"
+                  placeholder="Search product"
+                  className="w-full h-[44px] rounded-[50px] border border-[#b4b9c9] bg-white pl-5 pr-11 text-[15px] text-gray-700 placeholder-[#948d8d] outline-none focus:border-[#f37335]"
+                />
+                <Image
+                  src="/images/icon-search.svg"
+                  alt="search"
+                  width={16}
+                  height={16}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center gap-2 sm:gap-5 flex-shrink-0 ml-auto">
-            <button type="button" aria-label="Wishlist" className="hidden sm:flex items-center justify-center p-2">
-              <Image src="/images/icon-heart.svg" alt="wishlist" width={19} height={18} />
-            </button>
-            <button type="button" aria-label="Cart" onClick={openCart} className="flex items-center justify-center p-2">
-              <Image src="/images/icon-cart.svg" alt="cart" width={20} height={21} />
-            </button>
-            <button
-              type="button"
-              aria-label={searchExpanded ? 'Close search' : 'Search'}
-              aria-expanded={searchExpanded}
-              onClick={() => setSearchExpanded((e) => !e)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors"
-            >
-              <Image src="/images/icon-search.svg" alt="" width={20} height={20} />
-            </button>
-            <button
-              type="button"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((v) => !v)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors"
-            >
-              <HamburgerIcon open={menuOpen} />
-            </button>
-            <Link
-              href="/auth/login"
-              className="hidden lg:flex items-center gap-2 h-9 lg:h-[40px] px-4 lg:px-5 rounded-[50px] text-white text-sm lg:text-[16px] tsf-font-public-sans whitespace-nowrap"
-              style={{ background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))' }}
-            >
-              Login
-              <Image src="/images/icon-user.svg" alt="" width={10} height={13} aria-hidden />
-            </Link>
-            <div className="relative hidden lg:block" ref={currencyRef}>
+            <div className="flex items-center gap-2 sm:gap-5 flex-shrink-0 ml-auto">
+              <button type="button" aria-label="Wishlist" className="hidden sm:flex items-center justify-center p-2">
+                <Image src="/images/icon-heart.svg" alt="wishlist" width={19} height={18} />
+              </button>
+              <button type="button" aria-label="Cart" onClick={openCart} className="flex items-center justify-center p-2">
+                <Image src="/images/icon-cart.svg" alt="cart" width={20} height={21} />
+              </button>
               <button
                 type="button"
-                onClick={() => setCurrencyOpen((v) => !v)}
-                className="flex items-center gap-2 h-9 lg:h-[40px] px-2 lg:px-3 border border-[#b4b9c9] rounded-[3px] bg-white cursor-pointer"
+                aria-label={searchExpanded ? 'Close search' : 'Search'}
+                aria-expanded={searchExpanded}
+                onClick={() => setSearchExpanded((e) => !e)}
+                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors"
               >
-                {selectedCurrency.flag.startsWith('/') ? (
-                  <Image src={selectedCurrency.flag} alt={selectedCurrency.label} width={32} height={16} className="object-cover lg:w-[41px] lg:h-[21px]" />
-                ) : (
-                  <span className="text-lg lg:text-xl leading-none">{selectedCurrency.flag}</span>
-                )}
-                <span className="text-[14px] lg:text-[16px] text-black tsf-font-public-sans">{selectedCurrency.code}</span>
-                <Image
-                  src="/images/icon-chevron.svg"
-                  alt=""
-                  width={12}
-                  height={8}
-                  aria-hidden
-                  className={`transition-transform duration-200 ${currencyOpen ? 'rotate-180' : ''}`}
-                />
+                <Image src="/images/icon-search.svg" alt="" width={20} height={20} />
               </button>
+              <button
+                type="button"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((v) => !v)}
+                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors"
+              >
+                <HamburgerIcon open={menuOpen} />
+              </button>
+              <Link
+                href="/auth/login"
+                className="hidden lg:flex items-center gap-2 h-9 lg:h-[40px] px-4 lg:px-5 rounded-[50px] text-white text-sm lg:text-[16px] tsf-font-public-sans whitespace-nowrap"
+                style={{ background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))' }}
+              >
+                Login
+                <Image src="/images/icon-user.svg" alt="" width={10} height={13} aria-hidden />
+              </Link>
+              <div className="relative hidden lg:block" ref={currencyRef}>
+                <button
+                  type="button"
+                  onClick={() => setCurrencyOpen((v) => !v)}
+                  className="flex items-center gap-2 h-9 lg:h-[40px] px-2 lg:px-3 border border-[#b4b9c9] rounded-[3px] bg-white cursor-pointer"
+                >
+                  {selectedCurrency.flag.startsWith('/') ? (
+                    <Image src={selectedCurrency.flag} alt={selectedCurrency.label} width={32} height={16} className="object-cover lg:w-[41px] lg:h-[21px]" />
+                  ) : (
+                    <span className="text-lg lg:text-xl leading-none">{selectedCurrency.flag}</span>
+                  )}
+                  <span className="text-[14px] lg:text-[16px] text-black tsf-font-public-sans">{selectedCurrency.code}</span>
+                  <Image
+                    src="/images/icon-chevron.svg"
+                    alt=""
+                    width={12}
+                    height={8}
+                    aria-hidden
+                    className={`transition-transform duration-200 ${currencyOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
 
-              {currencyOpen && (
-                <div className="absolute right-0 top-[calc(100%+6px)] z-50 w-44 bg-white border border-[#b4b9c9] rounded-[3px] shadow-lg overflow-hidden">
-                  {currencies.map((c) => (
-                    <button
-                      key={c.code}
-                      type="button"
-                      onClick={() => { setSelectedCurrency(c); setCurrencyOpen(false); }}
-                      className={`w-full flex items-center gap-3 px-3 py-2.5 text-left hover:bg-gray-50 tsf-font-public-sans text-[15px] ${
-                        selectedCurrency.code === c.code ? 'bg-amber-50 text-[#f37335]' : 'text-gray-800'
-                      }`}
-                    >
-                      {c.flag.startsWith('/') ? (
-                        <Image src={c.flag} alt={c.label} width={28} height={16} className="object-cover rounded-sm flex-shrink-0" />
-                      ) : (
-                        <span className="text-lg leading-none">{c.flag}</span>
-                      )}
-                      <span className="font-medium">{c.code}</span>
-                      <span className="text-gray-400 text-[12px] truncate">{c.label}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
+                {currencyOpen && (
+                  <div className="absolute right-0 top-[calc(100%+6px)] z-50 w-44 bg-white border border-[#b4b9c9] rounded-[3px] shadow-lg overflow-hidden">
+                    {currencies.map((c) => (
+                      <button
+                        key={c.code}
+                        type="button"
+                        onClick={() => { setSelectedCurrency(c); setCurrencyOpen(false); }}
+                        className={`w-full flex items-center gap-3 px-3 py-2.5 text-left hover:bg-gray-50 tsf-font-public-sans text-[15px] ${selectedCurrency.code === c.code ? 'bg-amber-50 text-[#f37335]' : 'text-gray-800'
+                          }`}
+                      >
+                        {c.flag.startsWith('/') ? (
+                          <Image src={c.flag} alt={c.label} width={28} height={16} className="object-cover rounded-sm flex-shrink-0" />
+                        ) : (
+                          <span className="text-lg leading-none">{c.flag}</span>
+                        )}
+                        <span className="font-medium">{c.code}</span>
+                        <span className="text-gray-400 text-[12px] truncate">{c.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
           </div>
 
           {/* Expandable search row (mobile/tablet): visible when search icon is clicked */}
@@ -211,8 +209,14 @@ export default function Header({ variant = 'home' }: HeaderProps) {
         <button type="button" aria-label="Close menu" className="absolute inset-0 bg-black/40" onClick={() => setMenuOpen(false)} />
         <div className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-xl flex flex-col transition-transform duration-300 ease-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
-            <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center">
-              <Image src="/images/astra-logo.svg" alt="Astra" width={64} height={64} className="object-contain h-10 w-auto" />
+            <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center shrink-0">
+              <Image
+                src="/images/logo-horizontal.svg"
+                alt="Astra"
+                width={368}
+                height={100}
+                className="object-contain object-left h-10 w-auto max-w-[160px]"
+              />
             </Link>
             <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="p-2 rounded-md hover:bg-gray-100">
               <HamburgerIcon open />
@@ -278,9 +282,8 @@ export default function Header({ variant = 'home' }: HeaderProps) {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-[16px] uppercase tracking-wide tsf-font-larken-medium transition-opacity ${
-                  isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
-                }`}
+                className={`text-[16px] uppercase tracking-wide tsf-font-larken-medium transition-opacity ${isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
+                  }`}
               >
                 {link.label}
               </Link>

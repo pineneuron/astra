@@ -6,7 +6,7 @@ const services = [
   { title: 'Marriage Compatibility', price: '$99', image: '/images/services/svc-marriage.jpg',   href: '/services/marriage-compatibility'  },
   { title: 'All Remedies',           price: '$39', image: '/images/services/svc-remedies.jpg',   href: '/services/all-remedies'           },
   { title: 'Rudraksha',              price: '$39', image: '/images/services/svc-rudraksha.jpg',  href: '/services/rudraksha'              },
-  { title: 'Pitridosha',             price: '$39', image: '/images/services/svc-pitridosha.jpg', href: '/services/pitridosha'             },
+  { title: 'Dhan Maha Yog',          price: '$39', image: '/images/services/dhan-maha-yog.png', href: '/services/laxmiyog'             },
   { title: 'Numerology',             price: '$39', image: '/images/services/svc-numerology.jpg', href: '/services/numerology'             },
   { title: 'Birth Chart',            price: '$39', image: '/images/services/svc-birthchart.jpg', href: '/services/birth-chart'            },
   { title: 'Horoscope Matching',     price: '$39', image: '/images/services/svc-horoscope.jpg',  href: '/services/horoscope-matching'     },
