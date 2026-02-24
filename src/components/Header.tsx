@@ -72,7 +72,7 @@ export default function Header({ variant = 'home' }: HeaderProps) {
     <header>
       <div className="bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
-          <div className="h-[60px] lg:h-[100px] flex items-center gap-4 lg:gap-6">
+          <div className="h-[60px] lg:h-[90px] flex items-center gap-4 lg:gap-6">
           <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
               src="/images/logo-horizontal.svg"
