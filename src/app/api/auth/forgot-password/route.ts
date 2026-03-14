@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db"
 import nodemailer from "nodemailer"
 import crypto from "crypto"
 import { getSmtpSettings } from "@/lib/settings"
+import { getEmailBaseUrl } from "@/lib/emailBaseUrl"
 
 export const runtime = 'nodejs'
 
@@ -59,7 +60,7 @@ export async function POST(req: Request) {
     })
 
     // Send email with reset link
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'http://localhost:3000'
+    const baseUrl = getEmailBaseUrl()
     const resetUrl = `${baseUrl}/auth/reset-password?token=${token}&email=${encodeURIComponent(normalizedEmail)}`
     const logoUrl = `${baseUrl}/images/logo-vertical.png`
     const companyName = process.env.MAIL_FROM_NAME || 'Astra'

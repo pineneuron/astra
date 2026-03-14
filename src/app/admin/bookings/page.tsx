@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/db'
 import type { Prisma } from '@prisma/client'
 import BookingsClient from './BookingsClient'
+import { deleteBooking } from './actions'
 
 export const dynamic = 'force-dynamic'
 
@@ -54,6 +55,6 @@ export default async function AdminBookingsPage({ searchParams }: { searchParams
   }))
 
   return (
-    <BookingsClient q={q} bookings={uiBookings} />
+    <BookingsClient q={q} bookings={uiBookings} actions={{ deleteBooking }} />
   )
 }

@@ -15,6 +15,13 @@ const slides = [
     buttonText: 'Book a Consultation',
     buttonLink: '/services/home-vastu/book',
   },
+  // {
+  //   image: '/images/hero/home-vastu.png',
+  //   heading: 'Transform Your Home with Vastu',
+  //   subtext: 'Bring balance, positivity, and prosperity into your living space with expert Vastu guidance.',
+  //   buttonText: 'Book a Consultation',
+  //   buttonLink: '/services/home-vastu/book',
+  // },
 ];
 
 export default function HeroBanner() {

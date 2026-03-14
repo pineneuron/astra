@@ -40,3 +40,13 @@ export async function updateBooking(formData: FormData, skipAuth = false) {
   revalidatePath('/admin/bookings')
   return new Response('OK')
 }
+
+export async function deleteBooking(formData: FormData) {
+  await requireAdmin()
+  const id = String(formData.get('id') || '').trim()
+  if (!id) throw new Error('Missing booking id')
+
+  await prisma.booking.delete({ where: { id } })
+
+  revalidatePath('/admin/bookings')
+}

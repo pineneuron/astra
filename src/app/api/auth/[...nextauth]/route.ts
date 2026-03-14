@@ -8,6 +8,7 @@ import bcrypt from "bcryptjs"
 import { prisma } from "@/lib/db"
 import type { NextAuthOptions, DefaultSession } from "next-auth"
 import { getSmtpSettings } from "@/lib/settings"
+import { getEmailBaseUrl } from "@/lib/emailBaseUrl"
 
 declare module "next-auth" {
   interface Session {
@@ -83,7 +84,7 @@ export const authOptions: NextAuthOptions = {
       server: process.env.EMAIL_SERVER,
       from: process.env.EMAIL_FROM,
       async sendVerificationRequest({ identifier: email, url }) {
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'http://localhost:3000';
+        const baseUrl = getEmailBaseUrl();
         const logoUrl = `${baseUrl}/images/logo-vertical.png`;
         const smtpSettings = await getSmtpSettings();
         const companyName = smtpSettings.fromName || process.env.MAIL_FROM_NAME || 'Astra';

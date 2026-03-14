@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 import { prisma } from '@/lib/db';
 import { OrderStatus, PaymentStatus, Prisma } from '@prisma/client';
 import { getNotificationSettings, getSmtpSettings } from '@/lib/settings';
+import { getEmailBaseUrl } from '@/lib/emailBaseUrl';
 
 export async function POST(request: NextRequest) {
   try {
@@ -239,7 +240,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Get base URL for logo
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'http://localhost:3000';
+    const baseUrl = getEmailBaseUrl();
     const logoUrl = `${baseUrl}/images/logo-vertical.png`;
     const companyName = fromName;
     const companyAddress = process.env.COMPANY_ADDRESS || '';

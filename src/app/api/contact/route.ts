@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { getNotificationSettings, getSmtpSettings } from '@/lib/settings'
+import { getEmailBaseUrl } from '@/lib/emailBaseUrl'
 
 export const runtime = 'nodejs'
 
@@ -117,7 +118,7 @@ export async function POST(request: NextRequest) {
             },
         })
 
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'http://localhost:3000'
+        const baseUrl = getEmailBaseUrl()
         const logoUrl = `${baseUrl}/images/logo-vertical.png`
         const companyName = fromName
         const companyAddress = process.env.COMPANY_ADDRESS || ''

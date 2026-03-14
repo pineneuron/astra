@@ -1,10 +1,10 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { Search, MoreVertical, Eye, ArrowUpDown, ChevronUp, ChevronDown } from 'lucide-react'
+import { Search, MoreVertical, Eye, Trash2, ArrowUpDown, ChevronUp, ChevronDown, CheckCircle2, XCircle } from 'lucide-react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import * as AlertDialog from '@radix-ui/react-alert-dialog'
 import * as Toast from '@radix-ui/react-toast'
-import { CheckCircle2 } from 'lucide-react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import BookingModal from './BookingModal'
 
@@ -32,13 +32,18 @@ type UIBooking = {
 type Props = {
   q: string
   bookings: UIBooking[]
+  actions?: {
+    deleteBooking: (fd: FormData) => Promise<void>
+  }
 }
 
-export default function BookingsClient({ q, bookings }: Props) {
+export default function BookingsClient({ q, bookings, actions }: Props) {
   const [open, setOpen] = useState(false)
   const [viewing, setViewing] = useState<UIBooking | null>(null)
+  const [pendingDelete, setPendingDelete] = useState<UIBooking | null>(null)
   const [toastOpen, setToastOpen] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
+  const [toastError, setToastError] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
   const params = useSearchParams()
@@ -178,6 +183,18 @@ export default function BookingsClient({ q, bookings }: Props) {
                             <span>View Details</span>
                           </button>
                         </DropdownMenu.Item>
+                        {actions?.deleteBooking && (
+                          <DropdownMenu.Item asChild className="group flex cursor-pointer select-none items-center gap-2 rounded-md px-2 py-1.5 text-[13px] outline-none hover:bg-gray-100">
+                            <button
+                              type="button"
+                              onClick={() => setPendingDelete(booking)}
+                              className="flex items-center gap-2 w-full text-left text-red-600"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                              <span>Delete</span>
+                            </button>
+                          </DropdownMenu.Item>
+                        )}
                       </DropdownMenu.Content>
                     </DropdownMenu.Portal>
                   </DropdownMenu.Root>
@@ -194,13 +211,56 @@ export default function BookingsClient({ q, bookings }: Props) {
         </div>
       )}
 
-      <BookingModal isOpen={open} onClose={() => { setOpen(false); setViewing(null) }} booking={viewing ?? undefined} onSuccess={(m) => { setToastMsg(m); setToastOpen(true); router.refresh() }} />
+      <BookingModal isOpen={open} onClose={() => { setOpen(false); setViewing(null) }} booking={viewing ?? undefined} onSuccess={(m) => { setToastMsg(m); setToastOpen(true); setToastError(false); router.refresh() }} />
+
+      <AlertDialog.Root open={!!pendingDelete} onOpenChange={(o) => { if (!o) setPendingDelete(null) }}>
+        <AlertDialog.Portal>
+          <AlertDialog.Overlay className="fixed inset-0 z-50 bg-black/30" />
+          <AlertDialog.Content className="fixed left-1/2 top-1/2 z-50 w-[92vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-5 shadow-xl focus:outline-none">
+            <AlertDialog.Title className="text-[15px] font-semibold">Delete booking?</AlertDialog.Title>
+            <AlertDialog.Description className="mt-2 text-[13px] text-gray-600">
+              This will permanently delete booking {pendingDelete?.bookingNumber}. This action cannot be undone.
+            </AlertDialog.Description>
+            <div className="mt-5 flex justify-end gap-2">
+              <AlertDialog.Cancel asChild>
+                <button className="h-9 px-4 rounded-md border text-[13px]">Cancel</button>
+              </AlertDialog.Cancel>
+              <AlertDialog.Action asChild>
+                <button
+                  className="h-9 px-4 rounded-md bg-red-600 text-white text-[13px] font-semibold"
+                  onClick={async () => {
+                    if (pendingDelete && actions?.deleteBooking) {
+                      const fd = new FormData()
+                      fd.append('id', pendingDelete.id)
+                      try {
+                        await actions.deleteBooking(fd)
+                        setPendingDelete(null)
+                        setToastMsg('Booking deleted')
+                        setToastError(false)
+                        setToastOpen(true)
+                        router.refresh()
+                      } catch (error) {
+                        setPendingDelete(null)
+                        setToastMsg(error instanceof Error ? error.message : 'Failed to delete booking')
+                        setToastError(true)
+                        setToastOpen(true)
+                      }
+                    }
+                  }}
+                >
+                  Delete
+                </button>
+              </AlertDialog.Action>
+            </div>
+          </AlertDialog.Content>
+        </AlertDialog.Portal>
+      </AlertDialog.Root>
 
       <Toast.Provider swipeDirection="right">
-        <Toast.Root open={toastOpen} onOpenChange={setToastOpen} className="fixed top-6 right-6 z-[60] rounded-md bg-white border border-[oklch(.922_0_0)] shadow px-4 py-3 text-[13px] w-[320px] max-w-[92vw]">
+        <Toast.Root open={toastOpen} onOpenChange={setToastOpen} className={`fixed top-6 right-6 z-[60] rounded-md bg-white border shadow px-4 py-3 text-[13px] w-[320px] max-w-[92vw] ${toastError ? 'border-red-200 bg-red-50' : 'border-[oklch(.922_0_0)]'}`}>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="h-4 w-4 text-green-600" />
-            <Toast.Title className="font-semibold text-gray-900">Success</Toast.Title>
+            {toastError ? <XCircle className="h-4 w-4 text-red-600" /> : <CheckCircle2 className="h-4 w-4 text-green-600" />}
+            <Toast.Title className="font-semibold text-gray-900">{toastError ? 'Error' : 'Success'}</Toast.Title>
           </div>
           <Toast.Description className="mt-1 text-gray-700">{toastMsg}</Toast.Description>
         </Toast.Root>

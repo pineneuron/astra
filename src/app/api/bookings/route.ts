@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 import { prisma } from '@/lib/db';
 import { Decimal } from '@prisma/client/runtime/library';
 import { getNotificationSettings, getSmtpSettings } from '@/lib/settings';
+import { getEmailBaseUrl } from '@/lib/emailBaseUrl';
 
 function generateBookingNumber(): string {
   const num = Math.floor(100000 + Math.random() * 900000);
@@ -93,7 +94,7 @@ export async function POST(req: NextRequest) {
     if (smtpSettings.host && smtpSettings.user && smtpSettings.password) {
       const fromEmail = smtpSettings.fromEmail || 'noreply@3starfoods.com';
       const fromName = smtpSettings.fromName || 'Astra';
-      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'http://localhost:3000';
+      const baseUrl = getEmailBaseUrl();
       const logoUrl = `${baseUrl}/images/logo-vertical.png`;
       const companyName = fromName;
 

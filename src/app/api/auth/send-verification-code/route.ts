@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { prisma } from "@/lib/db"
 import nodemailer from "nodemailer"
 import { getSmtpSettings } from "@/lib/settings"
+import { getEmailBaseUrl } from "@/lib/emailBaseUrl"
 
 export const runtime = 'nodejs'
 
@@ -44,7 +45,7 @@ export async function POST(req: Request) {
     })
 
     // Send email with verification code
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'http://localhost:3000';
+    const baseUrl = getEmailBaseUrl();
     const logoUrl = `${baseUrl}/images/logo-vertical.png`;
     const companyName = process.env.MAIL_FROM_NAME || 'Astra';
     const companyEmail = process.env.MAIL_FROM_EMAIL || process.env.EMAIL_FROM || 'noreply@3starfoods.com';
