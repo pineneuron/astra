@@ -29,6 +29,8 @@ export async function createService(formData: FormData) {
   const rawSlug = String(formData.get('slug') || '').trim()
   const slug = rawSlug || slugify(title)
   const price = Number(formData.get('price') || 0)
+  const salePriceRaw = String(formData.get('salePrice') || '').trim()
+  const salePrice = salePriceRaw ? Number(salePriceRaw) : null
   const priceUnit = String(formData.get('priceUnit') || 'NPR')
   const description = String(formData.get('description') || '').trim() || null
   const imageUrl = String(formData.get('imageUrl') || '').trim() || null
@@ -47,6 +49,7 @@ export async function createService(formData: FormData) {
     title,
     slug: finalSlug,
     price,
+    salePrice: salePrice ?? undefined,
     priceUnit,
     description: description || undefined,
     imageUrl: imageUrl || undefined,
@@ -63,6 +66,8 @@ export async function updateService(formData: FormData) {
   const title = String(formData.get('title') || '').trim()
   const rawSlug = String(formData.get('slug') || '').trim()
   const price = Number(formData.get('price') || 0)
+  const salePriceRaw = String(formData.get('salePrice') || '').trim()
+  const salePrice = salePriceRaw ? Number(salePriceRaw) : null
   const priceUnit = String(formData.get('priceUnit') || 'NPR')
   const description = String(formData.get('description') || '').trim() || null
   const imageUrl = String(formData.get('imageUrl') || '').trim() || null
@@ -91,6 +96,7 @@ export async function updateService(formData: FormData) {
     title,
     slug: finalSlug,
     price,
+    salePrice: salePrice ?? null,
     priceUnit,
     description: description || undefined,
     imageUrl: imageUrl || undefined,

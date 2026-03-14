@@ -23,6 +23,7 @@ type Props = {
     title: string
     slug: string
     price: number
+    salePrice?: number | null
     priceUnit: string
     description?: string | null
     imageUrl?: string | null
@@ -38,6 +39,7 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
   const [slug, setSlug] = useState(service?.slug ?? '')
   const [slugTouched, setSlugTouched] = useState(!!service?.slug)
   const [price, setPrice] = useState<string>(service ? String(service.price) : '')
+  const [salePrice, setSalePrice] = useState<string>(service?.salePrice != null ? String(service.salePrice) : '')
   const [priceUnit, setPriceUnit] = useState(service?.priceUnit ?? 'NPR')
   const [description, setDescription] = useState(service?.description ?? '')
   const [imageUrl, setImageUrl] = useState(service?.imageUrl ?? '')
@@ -52,6 +54,7 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
       setSlug(service.slug)
       setSlugTouched(true)
       setPrice(String(service.price))
+      setSalePrice(service.salePrice != null ? String(service.salePrice) : '')
       setPriceUnit(service.priceUnit)
       setDescription(service.description ?? '')
       setImageUrl(service.imageUrl ?? '')
@@ -62,6 +65,7 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
       setSlug('')
       setSlugTouched(false)
       setPrice('')
+      setSalePrice('')
       setPriceUnit('NPR')
       setDescription('')
       setImageUrl('')
@@ -107,6 +111,7 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
               fd.append('title', title)
               fd.append('slug', slugTouched ? slug : slugify(title))
               fd.append('price', price)
+              fd.append('salePrice', salePrice)
               fd.append('priceUnit', priceUnit)
               fd.append('description', description)
               fd.append('imageUrl', imageUrl)
@@ -147,9 +152,9 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
                 placeholder="service-slug"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-[13px] font-medium text-gray-700 mb-1">Price</label>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1">Price (original)</label>
                 <input
                   type="number"
                   step="0.01"
@@ -158,6 +163,18 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
                   onChange={(e) => setPrice(e.target.value)}
                   className="w-full h-9 border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]"
                   placeholder="0"
+                />
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1">Sale Price (optional)</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  value={salePrice}
+                  onChange={(e) => setSalePrice(e.target.value)}
+                  className="w-full h-9 border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]"
+                  placeholder="Leave empty for no discount"
                 />
               </div>
               <div>

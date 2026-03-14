@@ -428,6 +428,7 @@ model Service {
   title       String
   description String?
   price       Decimal  @db.Decimal(10, 2)
+  salePrice   Decimal? @db.Decimal(10, 2) @map("sale_price")
   priceUnit   String   @default("NPR") @map("price_unit")
   imageUrl    String?  @map("image_url")
   isActive    Boolean  @default(true) @map("is_active")

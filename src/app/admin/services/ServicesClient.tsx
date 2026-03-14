@@ -17,7 +17,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-type UIService = Omit<Service, 'price'> & { price: number }
+type UIService = Omit<Service, 'price' | 'salePrice'> & { price: number; salePrice?: number | null }
 
 type Props = {
   q: string
@@ -126,11 +126,22 @@ export default function ServicesClient({ q, services, actions }: Props) {
       {
         accessorKey: 'price',
         header: () => <span className="text-sm">Price</span>,
-        cell: ({ getValue, row }) => (
-          <span className="text-[13px]">
-            {row.original.priceUnit} {Number(getValue() as number)}
-          </span>
-        ),
+        cell: ({ row }) => {
+          const s = row.original as UIService
+          const hasSale = s.salePrice != null && s.salePrice > 0
+          const displayPrice = hasSale ? s.salePrice! : s.price
+          return (
+            <span className="text-[13px]">
+              {hasSale && (
+                <span className="text-gray-400 line-through mr-1">
+                  {s.priceUnit} {s.price.toLocaleString()}
+                </span>
+              )}
+              {s.priceUnit} {displayPrice.toLocaleString()}
+              {hasSale && <span className="ml-1 text-green-600 text-[11px]">sale</span>}
+            </span>
+          )
+        },
         size: 100,
         enableSorting: true,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -141,15 +152,15 @@ export default function ServicesClient({ q, services, actions }: Props) {
         },
       },
       {
-        id: 'description',
-        header: () => <span className="text-sm">Description</span>,
+        accessorKey: 'sortOrder',
+        header: () => <span className="text-sm">Sort</span>,
         cell: ({ row }) => (
-          <span className="text-[13px] text-gray-600 line-clamp-2 max-w-[200px]">
-            {((row.original as UIService).description || '').slice(0, 80)}
-            {((row.original as UIService).description || '').length > 80 ? '...' : ''}
+          <span className="text-[13px] font-medium text-gray-700">
+            {(row.original as UIService).sortOrder}
           </span>
         ),
-        enableSorting: false,
+        size: 70,
+        enableSorting: true,
       },
     ],
     []
@@ -355,6 +366,7 @@ export default function ServicesClient({ q, services, actions }: Props) {
                 title: editing.title,
                 slug: editing.slug,
                 price: editing.price,
+                salePrice: editing.salePrice ?? undefined,
                 priceUnit: editing.priceUnit,
                 description: editing.description,
                 imageUrl: editing.imageUrl,

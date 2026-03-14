@@ -17,10 +17,17 @@ export default async function ServicesPage() {
   })
   const services = dbServices.map((s) => {
     const isHomeVastu = s.slug === 'home-vastu'
+    const originalPrice = Number(s.price)
+    const salePrice = s.salePrice != null ? Number(s.salePrice) : null
+    const displayPrice = salePrice ?? originalPrice
     return {
       title: s.title,
       ...(isHomeVastu
-        ? { price: Number(s.price), priceUnit: s.priceUnit }
+        ? {
+            price: displayPrice,
+            priceUnit: s.priceUnit,
+            ...(salePrice != null && { originalPrice }),
+          }
         : { priceAlternativeText: 'Service Coming Soon' }),
       image: s.imageUrl ?? '/images/placeholder.png',
       href: `/services/${s.slug}/book`,

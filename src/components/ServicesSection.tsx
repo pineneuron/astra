@@ -11,6 +11,8 @@ export type ServiceItem = {
   title: string;
   price?: number;
   priceUnit?: string;
+  /** Original price before sale – shown struck through when present */
+  originalPrice?: number;
   /** Shown instead of price when no price/priceUnit (e.g. "Consult & discover") */
   priceAlternativeText?: string;
   image: string;
@@ -128,10 +130,15 @@ export default function ServicesSection({
 
                 {/* Price + Stars row, or alternative text when no price */}
                 {(() => {
-                  const { price, priceUnit, priceAlternativeText } = svc;
+                  const { price, priceUnit, originalPrice, priceAlternativeText } = svc;
                   if (price != null && priceUnit) {
                     return (
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  {originalPrice != null && (
+                    <span className="tsf-font-public-sans font-medium text-gray-400 text-[14px] line-through">
+                      {formatPrice(originalPrice, priceUnit)}
+                    </span>
+                  )}
                   <span className="tsf-font-public-sans font-semibold text-[#d97706] text-[18px] tracking-[-0.05em]">
                     {formatPrice(price, priceUnit)}
                   </span>

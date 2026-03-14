@@ -34,6 +34,7 @@ export default async function AdminServicesPage({
   const servicesForClient = services.map((s: ServiceRow) => ({
     ...s,
     price: Number(s.price),
+    salePrice: s.salePrice != null ? Number(s.salePrice) : null,
   }))
 
   return (

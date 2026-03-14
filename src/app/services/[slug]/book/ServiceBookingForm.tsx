@@ -10,6 +10,7 @@ type Service = {
   title: string;
   price: number;
   priceUnit: string;
+  originalPrice?: number;
   priceAlternativeText?: string;
   image: string;
   href: string;
@@ -172,7 +173,14 @@ export default function ServiceBookingForm({ service }: { service: Service }) {
               </div>
               <div className="flex justify-between sm:block">
                 <span className="text-[#575d73]">Amount</span>
-                <span className="font-medium text-black sm:block">{formatPrice(service.price, service.priceUnit)}</span>
+                <span className="font-medium text-black sm:block">
+                  {service.originalPrice != null && (
+                    <span className="text-gray-400 line-through text-[12px] mr-1">
+                      {formatPrice(service.originalPrice, service.priceUnit)}
+                    </span>
+                  )}
+                  {formatPrice(service.price, service.priceUnit)}
+                </span>
               </div>
               <div className="flex justify-between sm:block">
                 <span className="text-[#575d73]">Status</span>
@@ -253,7 +261,16 @@ export default function ServiceBookingForm({ service }: { service: Service }) {
         <div className="flex-1 text-center sm:text-left">
           <h1 className="tsf-font-larken-medium text-black text-[24px]">{service.title}</h1>
           <p className="tsf-font-public-sans text-black text-[20px] font-semibold mt-1">
-            {service.priceAlternativeText ?? formatPrice(service.price, service.priceUnit)}
+            {service.priceAlternativeText ?? (
+              <>
+                {service.originalPrice != null && (
+                  <span className="text-gray-400 line-through text-[16px] mr-2">
+                    {formatPrice(service.originalPrice, service.priceUnit)}
+                  </span>
+                )}
+                {formatPrice(service.price, service.priceUnit)}
+              </>
+            )}
           </p>
         </div>
         <Link href="/" className="tsf-font-public-sans text-[14px] text-[#0d6800] hover:underline">
