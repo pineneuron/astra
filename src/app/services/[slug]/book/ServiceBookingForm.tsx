@@ -10,6 +10,7 @@ type Service = {
   title: string;
   price: number;
   priceUnit: string;
+  priceAlternativeText?: string;
   image: string;
   href: string;
   slug: string;
@@ -251,7 +252,9 @@ export default function ServiceBookingForm({ service }: { service: Service }) {
         </div>
         <div className="flex-1 text-center sm:text-left">
           <h1 className="tsf-font-larken-medium text-black text-[24px]">{service.title}</h1>
-          <p className="tsf-font-public-sans text-black text-[20px] font-semibold mt-1">{formatPrice(service.price, service.priceUnit)}</p>
+          <p className="tsf-font-public-sans text-black text-[20px] font-semibold mt-1">
+            {service.priceAlternativeText ?? formatPrice(service.price, service.priceUnit)}
+          </p>
         </div>
         <Link href="/" className="tsf-font-public-sans text-[14px] text-[#0d6800] hover:underline">
           ← Back to services

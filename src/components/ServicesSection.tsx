@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import * as Dialog from '@radix-ui/react-dialog';
 import { useCurrency } from '@/context/CurrencyContext';
 import { useFavourites } from '@/context/FavouritesContext';
 
@@ -26,6 +28,8 @@ export default function ServicesSection({
 }) {
   const { formatPrice } = useCurrency();
   const { isFavourite, toggleFavourite } = useFavourites();
+  const [showComingSoonModal, setShowComingSoonModal] = useState(false);
+
   return (
     <section className="relative w-full bg-white py-14 overflow-hidden">
       {/* Faint decorative blobs */}
@@ -35,6 +39,9 @@ export default function ServicesSection({
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header row */}
         <div className="flex items-center justify-between flex-col lg:flex-row mb-10">
+          <h2 className="tsf-font-larken text-black text-[36px]">
+            {variant === 'section' ? 'Our Services' : 'Services'}
+          </h2>
           {variant === 'section' && (
             <Link
               href="/services"
@@ -48,13 +55,10 @@ export default function ServicesSection({
 
         {/* Services list */}
         <div className="flex flex-wrap justify-center gap-5">
-          {services.map((svc) => (
-            <div
-              key={svc.title}
-              className="flex flex-col group w-full md:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)] shrink-0 bg-white border border-[#b4b9c9] rounded-[4px] overflow-hidden"
-            >
-              {/* Image */}
-              <Link href={svc.href} className="relative h-[200px] w-full shrink-0 overflow-hidden block cursor-pointer">
+          {services.map((svc) => {
+            const isBookable = svc.slug === 'home-vastu';
+            const imageContent = (
+              <>
                 <Image
                   src={svc.image}
                   alt={svc.title}
@@ -80,13 +84,47 @@ export default function ServicesSection({
                     <Image src="/images/icon-wishlist.svg" alt="" width={28} height={28} />
                   )}
                 </button>
-              </Link>
+              </>
+            );
+            return (
+            <div
+              key={svc.title}
+              className="flex flex-col group w-full md:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)] shrink-0 bg-white border border-[#b4b9c9] rounded-[4px] overflow-hidden"
+            >
+              {/* Image */}
+              {isBookable ? (
+                <Link href={svc.href} className="relative h-[200px] w-full shrink-0 overflow-hidden block cursor-pointer">
+                  {imageContent}
+                </Link>
+              ) : (
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setShowComingSoonModal(true)}
+                  onKeyDown={(e) => e.key === 'Enter' && setShowComingSoonModal(true)}
+                  className="relative h-[200px] w-full shrink-0 overflow-hidden block cursor-pointer"
+                >
+                  {imageContent}
+                </div>
+              )}
 
               {/* Body */}
               <div className="p-4 flex flex-col flex-1">
-                <Link href={svc.href} className="tsf-font-larken-medium text-black text-[20px] tracking-[-0.05em] mb-2 leading-snug block cursor-pointer hover:opacity-80 transition-opacity">
-                  {svc.title}
-                </Link>
+                {isBookable ? (
+                  <Link href={svc.href} className="tsf-font-larken-medium text-black text-[20px] tracking-[-0.05em] mb-2 leading-snug block cursor-pointer hover:opacity-80 transition-opacity">
+                    {svc.title}
+                  </Link>
+                ) : (
+                  <span
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => setShowComingSoonModal(true)}
+                    onKeyDown={(e) => e.key === 'Enter' && setShowComingSoonModal(true)}
+                    className="tsf-font-larken-medium text-black text-[20px] tracking-[-0.05em] mb-2 leading-snug block cursor-pointer hover:opacity-80 transition-opacity"
+                  >
+                    {svc.title}
+                  </span>
+                )}
 
                 {/* Price + Stars row, or alternative text when no price */}
                 {(() => {
@@ -123,21 +161,62 @@ export default function ServicesSection({
                 })()}
 
                 {/* Order Now button */}
-                <Link
-                  href={svc.href}
-                  className="mt-auto self-center w-fit inline-flex items-center justify-center gap-3 h-[45px] px-6 rounded-[50px] text-white tsf-font-public-sans text-[16px] cursor-pointer"
-                  style={{
-                    background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))',
-                  }}
-                >
-                  {svc.buttonText}
-                  <Image src="/images/hero-arrow-btn.svg" alt="" width={32} height={32} />
-                </Link>
+                {isBookable ? (
+                  <Link
+                    href={svc.href}
+                    className="mt-auto self-center w-fit inline-flex items-center justify-center gap-3 h-[45px] px-6 rounded-[50px] text-white tsf-font-public-sans text-[16px] cursor-pointer"
+                    style={{
+                      background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))',
+                    }}
+                  >
+                    {svc.buttonText}
+                    <Image src="/images/hero-arrow-btn.svg" alt="" width={32} height={32} />
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setShowComingSoonModal(true)}
+                    className="mt-auto self-center w-fit inline-flex items-center justify-center gap-3 h-[45px] px-6 rounded-[50px] text-white tsf-font-public-sans text-[16px] cursor-pointer"
+                    style={{
+                      background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))',
+                    }}
+                  >
+                    {svc.buttonText}
+                    <Image src="/images/hero-arrow-btn.svg" alt="" width={32} height={32} />
+                  </button>
+                )}
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
+
+      {/* Service Coming Soon modal */}
+      <Dialog.Root open={showComingSoonModal} onOpenChange={setShowComingSoonModal}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-50 bg-black/30" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[92vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 shadow-xl focus:outline-none">
+            <Dialog.Title className="text-xl font-semibold tsf-font-larken text-center text-black">
+              Service Coming Soon
+            </Dialog.Title>
+            <p className="mt-3 text-center text-gray-600 tsf-font-public-sans">
+              This service will be available soon. Please check back later.
+            </p>
+            <Dialog.Close asChild>
+              <button
+                type="button"
+                className="mt-6 w-full h-[45px] rounded-[50px] text-white tsf-font-public-sans font-medium"
+                style={{
+                  background: 'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))',
+                }}
+              >
+                OK
+              </button>
+            </Dialog.Close>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </section>
   );
 }

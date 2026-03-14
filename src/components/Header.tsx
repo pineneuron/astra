@@ -75,7 +75,7 @@ export default function Header({ variant = 'home' }: HeaderProps) {
               alt="Astra"
               width={368}
               height={100}
-              className="object-contain object-left h-11 sm:h-12 lg:h-14 w-auto max-w-[160px] sm:max-w-[160px] lg:max-w-[220px]"
+              className="object-contain object-left h-12 sm:h-14 lg:h-16 w-auto max-w-[180px] sm:max-w-[200px] lg:max-w-[260px]"
               priority
             />
           </Link>
@@ -222,7 +222,7 @@ export default function Header({ variant = 'home' }: HeaderProps) {
                 alt="Astra"
                 width={368}
                 height={100}
-                className="object-contain object-left h-10 w-auto max-w-[160px]"
+                className="object-contain object-left h-12 w-auto max-w-[180px]"
               />
             </Link>
             <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="p-2 rounded-md hover:bg-gray-100">

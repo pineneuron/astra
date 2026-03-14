@@ -15,15 +15,19 @@ export default async function ServicesPage() {
     where: { isActive: true },
     orderBy: { sortOrder: 'asc' },
   })
-  const services = dbServices.map((s) => ({
-    title: s.title,
-    price: Number(s.price),
-    priceUnit: s.priceUnit,
-    image: s.imageUrl ?? '/images/placeholder.png',
-    href: `/services/${s.slug}/book`,
-    slug: s.slug,
-    buttonText: 'Book Now' as const,
-  }))
+  const services = dbServices.map((s) => {
+    const isHomeVastu = s.slug === 'home-vastu'
+    return {
+      title: s.title,
+      ...(isHomeVastu
+        ? { price: Number(s.price), priceUnit: s.priceUnit }
+        : { priceAlternativeText: 'Service Coming Soon' }),
+      image: s.imageUrl ?? '/images/placeholder.png',
+      href: `/services/${s.slug}/book`,
+      slug: s.slug,
+      buttonText: 'Book Now' as const,
+    }
+  })
 
   return (
     <>

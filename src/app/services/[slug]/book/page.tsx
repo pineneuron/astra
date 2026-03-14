@@ -13,11 +13,13 @@ export default async function ServiceBookPage({ params }: { params: Promise<{ sl
   if (!dbService) notFound();
 
   const price = Number(dbService.price);
+  const isHomeVastu = dbService.slug === 'home-vastu';
 
   const service = {
     title: dbService.title,
     price,
     priceUnit: dbService.priceUnit,
+    ...(!isHomeVastu && { priceAlternativeText: 'Service Coming Soon' as const }),
     image: dbService.imageUrl ?? '/images/placeholder.png',
     href: `/services/${dbService.slug}`,
     slug: dbService.slug,

@@ -9,19 +9,16 @@ import 'swiper/css/pagination';
 
 const slides = [
   {
-    image: '/images/hero/banner-01.jpg',
-    heading: 'Transform Your Home with Vastu',
-    subtext: 'Bring balance, positivity, and prosperity into your living space with expert Vastu guidance.',
+    image: '/images/hero/home-vastu-2.svg',
+    imageMobile: '/images/hero/home-vastu-mobile.png',
+    heading: 'Home Visit and\nConsultation',
+    subtext: 'One-on-One Personalized Home Vastu Guidance',
+    discount: '50% OFF',
+    priceLabel: 'ON',
+    price: 'NPR. 100,000',
     buttonText: 'Book a Consultation',
     buttonLink: '/services/home-vastu/book',
   },
-  // {
-  //   image: '/images/hero/home-vastu.png',
-  //   heading: 'Transform Your Home with Vastu',
-  //   subtext: 'Bring balance, positivity, and prosperity into your living space with expert Vastu guidance.',
-  //   buttonText: 'Book a Consultation',
-  //   buttonLink: '/services/home-vastu/book',
-  // },
 ];
 
 export default function HeroBanner() {
@@ -41,31 +38,55 @@ export default function HeroBanner() {
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <div className="relative w-full h-[calc(100vh-60px)] lg:h-[calc(100vh-146px)] overflow-hidden">
-              {/* Background image */}
+              {/* Background image - desktop */}
               <Image
                 src={slide.image}
                 alt=""
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center hidden md:block"
+                priority={i === 0}
+              />
+              {/* Background image - mobile */}
+              <Image
+                src={slide.imageMobile ?? slide.image}
+                alt=""
+                fill
+                className="object-cover object-center md:hidden"
                 priority={i === 0}
               />
 
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/30" />
-
               {/* Content */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="max-w-[1200px] mx-auto w-full px-6 lg:px-10">
+              <div className="absolute inset-0 flex items-start pt-12 md:items-center md:pt-0">
+                <div className="max-w-[1440px] mx-auto px-8 w-full">
                   <div className="max-w-[670px]">
-                    <h1 className="tsf-font-larken text-white text-[40px] md:text-[52px] lg:text-[65px] leading-[1.15] mb-5 whitespace-pre-line">
+                    <h1 className="tsf-font-larken text-white md:text-[#0d6800] text-[46px] md:text-[56px] lg:text-[66px] leading-[1.15] mb-3 whitespace-pre-line font-bold">
                       {slide.heading}
                     </h1>
-                    <p className="tsf-font-public-sans text-white text-[16px] md:text-[18px] leading-[28px] mb-8 max-w-[602px] text-justify">
+                    <p className="tsf-font-public-sans text-white md:text-[#0d6800] text-[16px] md:text-[20px] leading-[28px] mb-6 max-w-[602px]">
                       {slide.subtext}
                     </p>
+                    {slide.discount != null && (
+                      <div className="mb-6 flex flex-wrap items-baseline gap-3">
+                        <div className="tsf-font-larken text-white md:text-[#0d6800] font-bold text-[34px] md:text-[42px] leading-tight">
+                          {slide.discount.split(' ').filter(Boolean).map((part, j) => (
+                            <span key={j} className="block">{part}</span>
+                          ))}
+                        </div>
+                        {slide.priceLabel != null && (
+                          <span className="tsf-font-public-sans text-white md:text-[#0d6800] text-[18px] md:text-[22px]">
+                            {slide.priceLabel}
+                          </span>
+                        )}
+                        {slide.price != null && (
+                          <span className="inline-block bg-[#98e6a0] md:bg-[#0d6800] text-[#0d6800] md:text-white tsf-font-public-sans font-semibold text-[16px] md:text-[20px] px-4 py-2 rounded-lg">
+                            {slide.price}
+                          </span>
+                        )}
+                      </div>
+                    )}
                     <Link
                       href={slide.buttonLink}
-                      className="inline-flex items-center gap-3 h-[45px] px-6 rounded-[50px] text-white tsf-font-public-sans text-[16px]"
+                      className="inline-flex items-center gap-3 h-[48px] px-7 rounded-[50px] text-white tsf-font-public-sans text-[16px] font-medium"
                       style={{
                         background:
                           'linear-gradient(to right, rgba(244,170,54,0.9), rgba(243,115,53,0.9))',
