@@ -18,7 +18,7 @@ export default async function ServiceBookPage({ params }: { params: Promise<{ sl
     title: dbService.title,
     price,
     priceUnit: dbService.priceUnit,
-    image: dbService.imageUrl ?? '/images/services/placeholder.jpg',
+    image: dbService.imageUrl ?? '/images/placeholder.png',
     href: `/services/${dbService.slug}`,
     slug: dbService.slug,
     buttonText: 'Book Now',

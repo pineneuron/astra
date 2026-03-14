@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { X } from 'lucide-react';
 import { useCurrency } from '@/context/CurrencyContext';
 
 type Service = {
@@ -408,15 +409,22 @@ export default function ServiceBookingForm({ service }: { service: Service }) {
               </div>
             ) : (
               <div className="relative inline-block">
-                <div className="relative w-[200px] h-[120px] rounded border border-[#e6ccc2] overflow-hidden">
-                  <Image src={paymentScreenshotUrl} alt="Payment proof" fill className="object-cover" />
+                <div className="rounded border border-[#e6ccc2] overflow-hidden bg-gray-50 p-1">
+                  {/* Use img to preserve natural aspect ratio (mobile screenshots are typically 9:16 portrait) */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={paymentScreenshotUrl}
+                    alt="Payment proof"
+                    className="block max-w-[280px] max-h-[420px] w-auto h-auto object-contain"
+                  />
                 </div>
                 <button
                   type="button"
                   onClick={() => setPaymentScreenshotUrl(null)}
-                  className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 text-white text-xs flex items-center justify-center hover:bg-red-600"
+                  aria-label="Remove screenshot"
+                  className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors"
                 >
-                  ×
+                  <X className="w-3.5 h-3.5" strokeWidth={2.5} />
                 </button>
               </div>
             )}

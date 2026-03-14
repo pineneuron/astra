@@ -19,7 +19,7 @@ export default async function ServicesPage() {
     title: s.title,
     price: Number(s.price),
     priceUnit: s.priceUnit,
-    image: s.imageUrl ?? '/images/services/placeholder.jpg',
+    image: s.imageUrl ?? '/images/placeholder.png',
     href: `/services/${s.slug}/book`,
     slug: s.slug,
     buttonText: 'Book Now' as const,
