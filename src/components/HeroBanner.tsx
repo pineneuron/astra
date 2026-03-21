@@ -13,11 +13,9 @@ const slides = [
     imageMobile: '/images/hero/home-vastu-mobile.png',
     heading: 'Home Visit and\nConsultation',
     subtext: 'One-on-One Personalized Home Vastu Guidance',
-    discount: '50% OFF',
-    priceLabel: 'ON',
-    price: 'NPR. 1,00,000',
-    finalPrice: '50,000 Only',
-    buttonText: 'Book a Consultation',
+    originalPrice: 'NPR. 150000',
+    finalPrice: 'NPR. 50,000/-',
+    buttonText: 'Book Your Home Visit Today',
     buttonLink: '/services/home-vastu/book',
   },
 ];
@@ -66,29 +64,22 @@ export default function HeroBanner() {
                     <p className="tsf-font-public-sans text-white lg:text-[#0d6800] text-[16px] lg:text-[20px] leading-[28px] mb-6 max-w-[602px]">
                       {slide.subtext}
                     </p>
-                    {slide.discount != null && (
-                      <div className="mb-6 flex flex-wrap items-baseline gap-3">
-                        <div className="tsf-font-larken text-white lg:text-[#0d6800] font-bold text-[34px] lg:text-[42px] leading-tight">
-                          {slide.discount.split(' ').filter(Boolean).map((part, j) => (
-                            <span key={j} className="block">{part}</span>
-                          ))}
-                        </div>
-                        {slide.priceLabel != null && (
-                          <span className="tsf-font-public-sans text-white lg:text-[#0d6800] text-[18px] lg:text-[22px]">
-                            {slide.priceLabel}
-                          </span>
-                        )}
-                        {slide.price != null && (
-                          <span className="inline-block bg-[#98e6a0] lg:bg-[#0d6800] text-[#0d6800] lg:text-white tsf-font-public-sans font-semibold text-[16px] lg:text-[20px] px-4 py-2 rounded-lg">
-                            {slide.price}
-                          </span>
-                        )}
-                      </div>
+                    {slide.originalPrice != null && (
+                      <p className="tsf-font-public-sans font-semibold text-[22px] lg:text-[26px] leading-tight mb-3 line-through decoration-red-500 decoration-[3px] text-white lg:text-[#0d6800]">
+                        {slide.originalPrice}
+                      </p>
                     )}
                     {slide.finalPrice != null && (
-                      <p className="mb-4 tsf-font-public-sans font-bold text-white lg:text-[#0d6800] text-[52px] lg:text-[64px] xl:text-[76px] leading-tight">
-                        {slide.finalPrice}
-                      </p>
+                      <div className="mb-10">
+                        <div className="inline-flex flex-col items-center justify-center bg-[#c8f5d0] lg:bg-[#0d6800] text-[#0d6800] lg:text-white rounded-xl px-8 py-3 min-w-[220px] lg:min-w-[260px]">
+                          <span className="tsf-font-public-sans text-[16px] lg:text-[18px] font-normal leading-tight">
+                            Only
+                          </span>
+                          <span className="tsf-font-larken font-bold text-[28px] lg:text-[34px] leading-tight">
+                            {slide.finalPrice}
+                          </span>
+                        </div>
+                      </div>
                     )}
                     <Link
                       href={slide.buttonLink}
