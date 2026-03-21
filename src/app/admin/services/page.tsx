@@ -30,6 +30,16 @@ export default async function AdminServicesPage({
     orderBy: [{ sortOrder: 'asc' }, { createdAt: 'desc' }],
   })
 
+  const categories = await prisma.category.findMany({
+    where: {
+      deletedAt: null,
+      isActive: true,
+      type: { in: ['SERVICE', 'ALL'] },
+    },
+    select: { id: true, name: true },
+    orderBy: { name: 'asc' },
+  })
+
   type ServiceRow = (typeof services)[number]
   const servicesForClient = services.map((s: ServiceRow) => ({
     ...s,
@@ -41,6 +51,7 @@ export default async function AdminServicesPage({
     <ServicesClient
       q={q}
       services={servicesForClient}
+      categories={categories}
       actions={{
         createService,
         updateService,

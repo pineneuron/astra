@@ -20,6 +20,8 @@ type Props = {
     slug: string
     sortOrder: number
     isActive: boolean
+    isFeatured: boolean
+    type: 'PRODUCT' | 'SERVICE' | 'ALL'
     parentId?: string | null
     imageUrl?: string | null
     imagePublicId?: string | null
@@ -40,6 +42,8 @@ export default function CategoryModal({ isOpen, onClose, parents, category, acti
   const [imagePublicId, setImagePublicId] = useState<string>(category?.imagePublicId ?? '')
   const [iconUrl, setIconUrl] = useState<string>(category?.iconUrl ?? '')
   const [iconPublicId, setIconPublicId] = useState<string>(category?.iconPublicId ?? '')
+  const [type, setType] = useState<'PRODUCT' | 'SERVICE' | 'ALL'>(category?.type ?? 'PRODUCT')
+  const [isFeatured, setIsFeatured] = useState(category?.isFeatured ?? false)
   const [uploading, setUploading] = useState(false)
   const [uploadingIcon, setUploadingIcon] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -55,6 +59,8 @@ export default function CategoryModal({ isOpen, onClose, parents, category, acti
       setImagePublicId(category.imagePublicId ?? '')
       setIconUrl(category.iconUrl ?? '')
       setIconPublicId(category.iconPublicId ?? '')
+      setType(category.type ?? 'PRODUCT')
+      setIsFeatured(category.isFeatured ?? false)
     } else {
       setName('')
       setSlug('')
@@ -65,6 +71,8 @@ export default function CategoryModal({ isOpen, onClose, parents, category, acti
       setImagePublicId('')
       setIconUrl('')
       setIconPublicId('')
+      setType('PRODUCT')
+      setIsFeatured(false)
     }
   }, [category, isOpen])
   const slugify = (input: string) => input
@@ -144,6 +152,29 @@ export default function CategoryModal({ isOpen, onClose, parents, category, acti
               <label className="block text-[12px] text-gray-600 mb-1">Sort Order</label>
               <input name="sortOrder" type="number" value={sortOrder} onChange={(e) => setSortOrder(Number(e.target.value))} className="h-9 w-full border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]" />
             </div>
+            <div>
+              <label className="block text-[12px] text-gray-600 mb-1">Type</label>
+              <select name="type" value={type} onChange={(e) => setType(e.target.value as 'PRODUCT' | 'SERVICE' | 'ALL')} className="h-9 w-full border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]">
+                <option value="PRODUCT">Product</option>
+                <option value="SERVICE">Service</option>
+                <option value="ALL">Both (Product &amp; Service)</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 py-1">
+            <input
+              type="checkbox"
+              id="isFeatured"
+              name="isFeatured"
+              value="true"
+              checked={isFeatured}
+              onChange={(e) => setIsFeatured(e.target.checked)}
+              className="h-4 w-4 rounded border-gray-300 accent-[#030e55]"
+            />
+            <label htmlFor="isFeatured" className="text-[13px] text-gray-700 cursor-pointer select-none">
+              Featured — show on home page category strip
+            </label>
           </div>
 
           <div>

@@ -15,9 +15,12 @@ function slugify(input: string): string {
     .replace(/^-+|-+$/g, '')
 }
 
+type CategoryOption = { id: string; name: string }
+
 type Props = {
   isOpen: boolean
   onClose: () => void
+  categories: CategoryOption[]
   service?: {
     id: string
     title: string
@@ -29,12 +32,14 @@ type Props = {
     imageUrl?: string | null
     sortOrder: number
     isActive: boolean
+    isFeatured: boolean
+    categoryId?: string | null
   }
   action: (fd: FormData) => Promise<void>
   onSuccess?: (message: string) => void
 }
 
-export default function ServiceModal({ isOpen, onClose, service, action, onSuccess }: Props) {
+export default function ServiceModal({ isOpen, onClose, categories, service, action, onSuccess }: Props) {
   const [title, setTitle] = useState(service?.title ?? '')
   const [slug, setSlug] = useState(service?.slug ?? '')
   const [slugTouched, setSlugTouched] = useState(!!service?.slug)
@@ -45,6 +50,8 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
   const [imageUrl, setImageUrl] = useState(service?.imageUrl ?? '')
   const [sortOrder, setSortOrder] = useState<number>(service?.sortOrder ?? 0)
   const [isActive, setIsActive] = useState<boolean>(service?.isActive ?? true)
+  const [isFeatured, setIsFeatured] = useState<boolean>(service?.isFeatured ?? false)
+  const [categoryId, setCategoryId] = useState<string>(service?.categoryId ?? '')
   const [uploading, setUploading] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
@@ -60,6 +67,8 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
       setImageUrl(service.imageUrl ?? '')
       setSortOrder(service.sortOrder)
       setIsActive(service.isActive)
+      setIsFeatured(service.isFeatured)
+      setCategoryId(service.categoryId ?? '')
     } else {
       setTitle('')
       setSlug('')
@@ -71,6 +80,8 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
       setImageUrl('')
       setSortOrder(0)
       setIsActive(true)
+      setIsFeatured(false)
+      setCategoryId('')
     }
   }, [service, isOpen])
 
@@ -117,6 +128,8 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
               fd.append('imageUrl', imageUrl)
               fd.append('sortOrder', String(sortOrder))
               fd.append('isActive', String(isActive))
+              fd.append('isFeatured', String(isFeatured))
+              fd.append('categoryId', categoryId)
               setSubmitting(true)
               try {
                 await action(fd)
@@ -228,28 +241,58 @@ export default function ServiceModal({ isOpen, onClose, service, action, onSucce
                 </label>
               </div>
             </div>
-            <div>
-              <label className="block text-[13px] font-medium text-gray-700 mb-1">Sort Order</label>
-              <input
-                type="number"
-                min="0"
-                value={sortOrder}
-                onChange={(e) => setSortOrder(Number(e.target.value) || 0)}
-                className="h-9 w-24 border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1">Sort Order</label>
+                <input
+                  type="number"
+                  min="0"
+                  value={sortOrder}
+                  onChange={(e) => setSortOrder(Number(e.target.value) || 0)}
+                  className="h-9 w-full border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]"
+                />
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1">Category</label>
+                <select
+                  value={categoryId}
+                  onChange={(e) => setCategoryId(e.target.value)}
+                  className="h-9 w-full border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]"
+                >
+                  <option value="">— No category —</option>
+                  {categories.map((c) => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Checkbox.Root
-                id="isActive"
-                checked={isActive}
-                onCheckedChange={(c) => setIsActive(c === true)}
-                className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center data-[state=checked]:bg-[#030e55] data-[state=checked]:border-[#030e55]"
-              >
-                <Checkbox.Indicator>
-                  <Check className="h-3 w-3 text-white" />
-                </Checkbox.Indicator>
-              </Checkbox.Root>
-              <label htmlFor="isActive" className="text-[13px] font-medium">Active</label>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Checkbox.Root
+                  id="isActive"
+                  checked={isActive}
+                  onCheckedChange={(c) => setIsActive(c === true)}
+                  className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center data-[state=checked]:bg-[#030e55] data-[state=checked]:border-[#030e55]"
+                >
+                  <Checkbox.Indicator>
+                    <Check className="h-3 w-3 text-white" />
+                  </Checkbox.Indicator>
+                </Checkbox.Root>
+                <label htmlFor="isActive" className="text-[13px] font-medium">Active</label>
+              </div>
+              <div className="flex items-center gap-2">
+                <Checkbox.Root
+                  id="isFeatured"
+                  checked={isFeatured}
+                  onCheckedChange={(c) => setIsFeatured(c === true)}
+                  className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center data-[state=checked]:bg-[#030e55] data-[state=checked]:border-[#030e55]"
+                >
+                  <Checkbox.Indicator>
+                    <Check className="h-3 w-3 text-white" />
+                  </Checkbox.Indicator>
+                </Checkbox.Root>
+                <label htmlFor="isFeatured" className="text-[13px] font-medium">Featured — show in home page services section</label>
+              </div>
             </div>
             <div className="flex justify-end gap-2 pt-4 border-t border-[oklch(.922_0_0)]">
               <button type="button" onClick={onClose} className="h-9 px-4 rounded-md border text-[13px]">

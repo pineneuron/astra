@@ -36,6 +36,8 @@ export async function createService(formData: FormData) {
   const imageUrl = String(formData.get('imageUrl') || '').trim() || null
   const sortOrder = Number(formData.get('sortOrder') || 0)
   const isActive = String(formData.get('isActive') || 'true') === 'true'
+  const isFeatured = String(formData.get('isFeatured') || 'false') === 'true'
+  const categoryId = String(formData.get('categoryId') || '').trim() || null
 
   if (!title) return
 
@@ -55,6 +57,8 @@ export async function createService(formData: FormData) {
     imageUrl: imageUrl || undefined,
     sortOrder,
     isActive,
+    isFeatured,
+    ...(categoryId ? { category: { connect: { id: categoryId } } } : {}),
   }
   await prisma.service.create({ data: createData })
   revalidatePath('/admin/services')
@@ -73,6 +77,8 @@ export async function updateService(formData: FormData) {
   const imageUrl = String(formData.get('imageUrl') || '').trim() || null
   const sortOrder = Number(formData.get('sortOrder') || 0)
   const isActive = String(formData.get('isActive') || 'true') === 'true'
+  const isFeatured = String(formData.get('isFeatured') || 'false') === 'true'
+  const categoryId = String(formData.get('categoryId') || '').trim() || null
 
   if (!id) return
 
@@ -102,6 +108,8 @@ export async function updateService(formData: FormData) {
     imageUrl: imageUrl || undefined,
     sortOrder,
     isActive,
+    isFeatured,
+    category: categoryId ? { connect: { id: categoryId } } : { disconnect: true },
   }
   await prisma.service.update({ where: { id }, data: updateData })
   revalidatePath('/admin/services')

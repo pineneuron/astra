@@ -45,7 +45,7 @@ export default async function ServicesPage() {
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
           </div>
         </div>
-        <ServicesSection services={services} variant="page" />
+        <ServicesSection services={services} />
       </main>
       <Footer />
     </>

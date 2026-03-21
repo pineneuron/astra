@@ -19,9 +19,12 @@ import {
 
 type UIService = Omit<Service, 'price' | 'salePrice'> & { price: number; salePrice?: number | null }
 
+type CategoryOption = { id: string; name: string }
+
 type Props = {
   q: string
   services: UIService[]
+  categories: CategoryOption[]
   actions: {
     createService: (fd: FormData) => Promise<void>
     updateService: (fd: FormData) => Promise<void>
@@ -31,7 +34,7 @@ type Props = {
   }
 }
 
-export default function ServicesClient({ q, services, actions }: Props) {
+export default function ServicesClient({ q, services, categories, actions }: Props) {
   const [open, setOpen] = useState(false)
   const [editing, setEditing] = useState<UIService | null>(null)
   const [pendingDelete, setPendingDelete] = useState<UIService | null>(null)
@@ -238,6 +241,7 @@ export default function ServicesClient({ q, services, actions }: Props) {
                     </th>
                   )
                 })}
+                <th className="px-3 py-2 w-24 text-center">Featured</th>
                 <th className="px-3 py-2 w-24">Active</th>
                 <th className="px-3 py-2 w-56 text-right">Actions</th>
               </tr>
@@ -253,6 +257,12 @@ export default function ServicesClient({ q, services, actions }: Props) {
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
                   ))}
+                  <td className="px-3 py-3 text-center">
+                    {s.isFeatured
+                      ? <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-600 text-[11px] font-bold">✓</span>
+                      : <span className="text-gray-300 text-[13px]">—</span>
+                    }
+                  </td>
                   <td className="px-3 py-3">
                     <form action={actions.toggleServiceActive}>
                       <input type="hidden" name="id" value={s.id} />
@@ -359,6 +369,7 @@ export default function ServicesClient({ q, services, actions }: Props) {
       <ServiceModal
         isOpen={open}
         onClose={() => setOpen(false)}
+        categories={categories}
         service={
           editing
             ? {
@@ -372,6 +383,8 @@ export default function ServicesClient({ q, services, actions }: Props) {
                 imageUrl: editing.imageUrl,
                 sortOrder: editing.sortOrder,
                 isActive: editing.isActive,
+                isFeatured: editing.isFeatured,
+                categoryId: editing.categoryId ?? null,
               }
             : undefined
         }

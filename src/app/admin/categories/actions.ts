@@ -3,6 +3,7 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { prisma } from '@/lib/db'
+import { CategoryType } from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
@@ -24,16 +25,16 @@ export async function createCategory(formData: FormData) {
   const imagePublicId = String(formData.get('imagePublicId') || '') || null
   const iconUrl = String(formData.get('iconUrl') || '') || null
   const iconPublicId = String(formData.get('iconPublicId') || '') || null
+  const type = (String(formData.get('type') || 'PRODUCT')) as CategoryType
+  const isFeatured = formData.get('isFeatured') === 'true'
   if (!name || !rawSlug) return
-  // ensure unique slug by suffixing -2, -3 ... if needed
   const base = rawSlug
   let slug = base
   let n = 2
-  // loop until unique
   while (await prisma.category.findUnique({ where: { slug } })) {
     slug = `${base}-${n++}`
   }
-  await prisma.category.create({ data: { name, slug, sortOrder, isActive: true, parentId: parentId || undefined, imageUrl: imageUrl || undefined, imagePublicId: imagePublicId || undefined, iconUrl: iconUrl || undefined, iconPublicId: iconPublicId || undefined } })
+  await prisma.category.create({ data: { name, slug, sortOrder, isActive: true, isFeatured, type, parentId: parentId || undefined, imageUrl: imageUrl || undefined, imagePublicId: imagePublicId || undefined, iconUrl: iconUrl || undefined, iconPublicId: iconPublicId || undefined } })
   revalidatePath('/admin/categories')
 }
 
@@ -48,8 +49,9 @@ export async function updateCategory(formData: FormData) {
   const imagePublicId = String(formData.get('imagePublicId') || '') || null
   const iconUrl = String(formData.get('iconUrl') || '') || null
   const iconPublicId = String(formData.get('iconPublicId') || '') || null
+  const type = (String(formData.get('type') || 'PRODUCT')) as CategoryType
+  const isFeatured = formData.get('isFeatured') === 'true'
   if (!id) return
-  // if slug collides with another record, suffix it
   let slug = rawSlug
   if (rawSlug) {
     const existing = await prisma.category.findUnique({ where: { slug: rawSlug } })
@@ -62,7 +64,7 @@ export async function updateCategory(formData: FormData) {
       }
     }
   }
-  await prisma.category.update({ where: { id }, data: { name, slug, sortOrder, parentId: parentId === null ? null : parentId, imageUrl: imageUrl || undefined, imagePublicId: imagePublicId || undefined, iconUrl: iconUrl || undefined, iconPublicId: iconPublicId || undefined } })
+  await prisma.category.update({ where: { id }, data: { name, slug, sortOrder, isFeatured, type, parentId: parentId === null ? null : parentId, imageUrl: imageUrl || undefined, imagePublicId: imagePublicId || undefined, iconUrl: iconUrl || undefined, iconPublicId: iconPublicId || undefined } })
   revalidatePath('/admin/categories')
 }
 

@@ -67,33 +67,42 @@ enum Role {
   CUSTOMER
 }
 
+enum CategoryType {
+  PRODUCT
+  SERVICE
+  ALL
+}
+
 // ===========================================
 // CORE BUSINESS ENTITIES
 // ===========================================
 
 model Category {
-  id            String   @id @default(cuid())
+  id            String       @id @default(cuid())
   name          String
-  slug          String   @unique
+  slug          String       @unique
   description   String?
-  imageUrl      String?  @map("image_url")
-  imagePublicId String?  @map("image_public_id")
-  iconUrl       String?  @map("icon_url")
-  iconPublicId  String?  @map("icon_public_id")
-  sortOrder     Int      @default(0) @map("sort_order")
-  isActive      Boolean  @default(true) @map("is_active")
-  parentId      String?  @map("parent_id")
-  createdBy     String?  @map("created_by")
-  createdAt     DateTime @default(now()) @map("created_at")
-  updatedAt     DateTime @updatedAt @map("updated_at")
-  deletedAt     DateTime? @map("deleted_at")
+  imageUrl      String?      @map("image_url")
+  imagePublicId String?      @map("image_public_id")
+  iconUrl       String?      @map("icon_url")
+  iconPublicId  String?      @map("icon_public_id")
+  sortOrder     Int          @default(0) @map("sort_order")
+  isActive      Boolean      @default(true) @map("is_active")
+  isFeatured    Boolean      @default(false) @map("is_featured")
+  type          CategoryType @default(PRODUCT)
+  parentId      String?      @map("parent_id")
+  createdBy     String?      @map("created_by")
+  createdAt     DateTime     @default(now()) @map("created_at")
+  updatedAt     DateTime     @updatedAt @map("updated_at")
+  deletedAt     DateTime?    @map("deleted_at")
 
   // Relations
   products      Product[]
   productLinks  ProductCategory[]
-  createdByUser User?     @relation(fields: [createdBy], references: [id], onDelete: SetNull)
-  parent        Category? @relation("CategoryToCategory", fields: [parentId], references: [id], onDelete: SetNull)
-  children      Category[] @relation("CategoryToCategory")
+  services      Service[]
+  createdByUser User?        @relation(fields: [createdBy], references: [id], onDelete: SetNull)
+  parent        Category?    @relation("CategoryToCategory", fields: [parentId], references: [id], onDelete: SetNull)
+  children      Category[]   @relation("CategoryToCategory")
 
   @@index([createdBy])
   @@map("categories")
@@ -423,21 +432,24 @@ model Page {
 // ===========================================
 
 model Service {
-  id          String   @id @default(cuid())
-  slug        String   @unique
+  id          String    @id @default(cuid())
+  slug        String    @unique
   title       String
   description String?
-  price       Decimal  @db.Decimal(10, 2)
-  salePrice   Decimal? @db.Decimal(10, 2) @map("sale_price")
-  priceUnit   String   @default("NPR") @map("price_unit")
-  imageUrl    String?  @map("image_url")
-  isActive    Boolean  @default(true) @map("is_active")
-  sortOrder   Int      @default(0) @map("sort_order")
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  price       Decimal   @db.Decimal(10, 2)
+  salePrice   Decimal?  @db.Decimal(10, 2) @map("sale_price")
+  priceUnit   String    @default("NPR") @map("price_unit")
+  imageUrl    String?   @map("image_url")
+  isActive    Boolean   @default(true) @map("is_active")
+  isFeatured  Boolean   @default(false) @map("is_featured")
+  sortOrder   Int       @default(0) @map("sort_order")
+  categoryId  String?   @map("category_id")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
 
   // Relations
   bookings Booking[]
+  category Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
 
   @@map("services")
 }

@@ -21,13 +21,7 @@ export type ServiceItem = {
   buttonText: string;
 };
 
-export default function ServicesSection({
-  services,
-  variant = 'section',
-}: {
-  services: ServiceItem[]
-  variant?: 'section' | 'page'
-}) {
+export default function ServicesSection({ services }: { services: ServiceItem[] }) {
   const { formatPrice } = useCurrency();
   const { isFavourite, toggleFavourite } = useFavourites();
   const [showComingSoonModal, setShowComingSoonModal] = useState(false);
@@ -39,22 +33,6 @@ export default function ServicesSection({
       <div className="pointer-events-none absolute bottom-0 left-1/2 w-[280px] h-[280px] rounded-full bg-[rgba(244,170,54,0.06)]" />
 
       <div className="max-w-[1200px] mx-auto px-6">
-        {/* Header row */}
-        <div className="flex items-center justify-between flex-col lg:flex-row mb-10">
-          <h2 className="tsf-font-larken text-black text-[36px]">
-            {variant === 'section' ? 'Our Services' : 'Services'}
-          </h2>
-          {variant === 'section' && (
-            <Link
-              href="/services"
-              className="flex items-center gap-2 tsf-font-public-sans font-medium text-[16px] text-black hover:opacity-70 transition-opacity"
-            >
-              View All Services
-              <Image src="/images/icon-arrow-right-sm.svg" alt="" width={16} height={10} />
-            </Link>
-          )}
-        </div>
-
         {/* Services list */}
         <div className="flex flex-wrap justify-center gap-5">
           {services.map((svc) => {

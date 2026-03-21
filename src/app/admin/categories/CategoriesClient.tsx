@@ -139,6 +139,8 @@ export default function CategoriesClient({ q, showDeleted = false, categories, p
                   Sort {sortByOrder === 'asc' ? <ChevronUp className="h-3 w-3" /> : sortByOrder === 'desc' ? <ChevronDown className="h-3 w-3" /> : <ArrowUpDown className="h-3 w-3 text-gray-400" />}
                 </button>
               </th>
+              <th className="px-3 py-2">Type</th>
+              <th className="px-3 py-2 text-center">Featured</th>
               <th className="px-3 py-2 text-center">Products</th>
               <th className="px-3 py-2">Active</th>
               <th className="px-3 py-2 w-24 text-right">Actions</th>
@@ -183,6 +185,21 @@ export default function CategoriesClient({ q, showDeleted = false, categories, p
                 <td className="px-3 py-3 text-[13px]">{c.slug}</td>
                 <td className="px-3 py-3 text-[13px]">{c.parentName ?? '-'}</td>
                 <td className="px-3 py-3 text-[13px]">{c.sortOrder}</td>
+                <td className="px-3 py-3">
+                  <span className={`inline-flex px-2 py-0.5 rounded text-[11px] font-semibold ${
+                    c.type === 'SERVICE' ? 'bg-purple-100 text-purple-700' :
+                    c.type === 'ALL' ? 'bg-blue-100 text-blue-700' :
+                    'bg-orange-100 text-orange-700'
+                  }`}>
+                    {c.type === 'ALL' ? 'Both' : c.type === 'SERVICE' ? 'Service' : 'Product'}
+                  </span>
+                </td>
+                <td className="px-3 py-3 text-center">
+                  {c.isFeatured
+                    ? <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-600 text-[11px] font-bold">✓</span>
+                    : <span className="text-gray-300 text-[13px]">—</span>
+                  }
+                </td>
                 <td className="px-3 py-3 text-center">
                   <span className="text-[13px] font-medium text-gray-700">{c.productCount}</span>
                 </td>
@@ -255,6 +272,8 @@ export default function CategoriesClient({ q, showDeleted = false, categories, p
           slug: editing.slug,
           sortOrder: editing.sortOrder,
           isActive: editing.isActive,
+          isFeatured: editing.isFeatured,
+          type: editing.type as 'PRODUCT' | 'SERVICE' | 'ALL',
           parentId: (editing as unknown as { parentId?: string | null }).parentId,
           imageUrl: editing.imageUrl,
           imagePublicId: editing.imagePublicId,

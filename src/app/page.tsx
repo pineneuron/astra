@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CartSidebar from '@/components/CartSidebar'
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const dbServices = await prisma.service.findMany({
-    where: { isActive: true },
+    where: { isActive: true, isFeatured: true },
     orderBy: { sortOrder: 'asc' },
   })
   const services = dbServices.map((s) => {
@@ -86,7 +88,14 @@ export default async function HomePage() {
         <HeroBanner />
         <AboutSection />
         <CategoryStrip />
-        <ServicesSection services={interleaveServicesWithStatics(services, STATIC_SERVICE_ITEMS)} variant="section" />
+        <div className="max-w-[1200px] mx-auto px-6 pt-14 flex items-center justify-between flex-col lg:flex-row">
+          <h2 className="tsf-font-larken text-black text-[36px]">Our Services</h2>
+          <Link href="/services" className="flex items-center gap-2 tsf-font-public-sans font-medium text-[16px] text-black hover:opacity-70 transition-opacity">
+            View All Services
+            <Image src="/images/icon-arrow-right-sm.svg" alt="" width={16} height={10} />
+          </Link>
+        </div>
+        <ServicesSection services={interleaveServicesWithStatics(services, STATIC_SERVICE_ITEMS)} />
         <ZodiacSection />
         <EventsSection />
         <BookingSection />
