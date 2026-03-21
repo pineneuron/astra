@@ -568,7 +568,7 @@ export default function PageEditorDialog({ isOpen, onClose, page, action, onSucc
               <button
                 type="submit"
                 disabled={submitting}
-                className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60"
+                className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60"
               >
                 {submitting ? 'Saving...' : 'Save Changes'}
               </button>

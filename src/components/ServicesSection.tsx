@@ -36,7 +36,7 @@ export default function ServicesSection({ services }: { services: ServiceItem[] 
         {/* Services list */}
         <div className="flex flex-wrap justify-center gap-5">
           {services.map((svc) => {
-            const isBookable = svc.slug === 'home-vastu';
+            const isBookable = svc.price != null && svc.price > 0;
             const imageContent = (
               <>
                 <Image

@@ -16,13 +16,12 @@ export default async function ServicesPage() {
     orderBy: { sortOrder: 'asc' },
   })
   const services = dbServices.map((s) => {
-    const isHomeVastu = s.slug === 'home-vastu'
     const originalPrice = Number(s.price)
     const salePrice = s.salePrice != null ? Number(s.salePrice) : null
     const displayPrice = salePrice ?? originalPrice
     return {
       title: s.title,
-      ...(isHomeVastu
+      ...(displayPrice > 0
         ? {
             price: displayPrice,
             priceUnit: s.priceUnit,

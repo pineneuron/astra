@@ -8,7 +8,7 @@ export default function ServicesLoading() {
         </div>
         <div className="flex items-center gap-2">
           <div className="h-9 w-64 bg-gray-200 rounded-md animate-pulse hidden md:block"></div>
-          <div className="h-9 px-3 rounded-md bg-[#030e55] w-24 animate-pulse"></div>
+          <div className="h-9 px-3 rounded-md admin-btn-primary w-24 animate-pulse"></div>
         </div>
       </div>
 

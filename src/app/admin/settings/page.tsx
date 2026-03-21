@@ -363,7 +363,7 @@ function ProfileSection() {
           <button
             type="submit"
             disabled={submitting}
-            className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md cursor-pointer hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 admin-btn-primary text-white text-sm font-medium rounded-md cursor-pointer hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgba(243,115,53,0.5)] focus:ring-offset-2 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? 'Updating...' : 'Update Profile'}
           </button>
@@ -442,7 +442,7 @@ function ProfileSection() {
             <button
               type="submit"
               disabled={changingPassword}
-              className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md cursor-pointer hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 admin-btn-primary text-white text-sm font-medium rounded-md cursor-pointer hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgba(243,115,53,0.5)] focus:ring-offset-2 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {changingPassword ? 'Updating...' : 'Update Password'}
             </button>
@@ -647,7 +647,7 @@ function GeneralSection() {
         <button
           type="submit"
           disabled={saving}
-          className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md cursor-pointer hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 admin-btn-primary text-white text-sm font-medium rounded-md cursor-pointer hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgba(243,115,53,0.5)] focus:ring-offset-2 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {saving ? 'Saving...' : 'Save Changes'}
         </button>
@@ -823,7 +823,7 @@ function NotificationsSection() {
         <button
           type="submit"
           disabled={saving}
-          className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md cursor-pointer hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 admin-btn-primary text-white text-sm font-medium rounded-md cursor-pointer hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgba(243,115,53,0.5)] focus:ring-offset-2 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {saving ? 'Saving...' : 'Save Notification Settings'}
         </button>
@@ -1115,7 +1115,7 @@ function SmtpSection() {
         <button
           type="submit"
           disabled={saving}
-          className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md cursor-pointer hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 admin-btn-primary text-white text-sm font-medium rounded-md cursor-pointer hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[rgba(243,115,53,0.5)] focus:ring-offset-2 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {saving ? 'Saving...' : 'Save SMTP Settings'}
         </button>
@@ -1210,7 +1210,7 @@ function ExchangeRatesSection() {
         </div>
       </div>
       <div className="pt-2">
-        <button type="submit" disabled={saving} className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md cursor-pointer hover:bg-gray-800 disabled:opacity-50">
+        <button type="submit" disabled={saving} className="px-4 py-2 admin-btn-primary text-white text-sm font-medium rounded-md cursor-pointer hover:opacity-90 transition-opacity disabled:opacity-50">
           {saving ? 'Saving...' : 'Save Exchange Rates'}
         </button>
       </div>

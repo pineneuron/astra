@@ -181,7 +181,7 @@ export default function UserModal({ isOpen, onClose, user, action, onSuccess }: 
 
             <div className="flex justify-end gap-2 pt-2">
               <button type="button" onClick={onClose} className="h-9 px-4 rounded-md border text-[13px]">Cancel</button>
-              <button type="submit" disabled={uploading || submitting || (!isEdit && (!!password && !!confirmPassword && password !== confirmPassword))} className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60">{submitting ? (isEdit ? 'Saving...' : 'Creating...') : (isEdit ? 'Save Changes' : 'Create User')}</button>
+              <button type="submit" disabled={uploading || submitting || (!isEdit && (!!password && !!confirmPassword && password !== confirmPassword))} className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60">{submitting ? (isEdit ? 'Saving...' : 'Creating...') : (isEdit ? 'Save Changes' : 'Create User')}</button>
             </div>
           </form>
         </Dialog.Content>

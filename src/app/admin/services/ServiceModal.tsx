@@ -272,7 +272,7 @@ export default function ServiceModal({ isOpen, onClose, categories, service, act
                   id="isActive"
                   checked={isActive}
                   onCheckedChange={(c) => setIsActive(c === true)}
-                  className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center data-[state=checked]:bg-[#030e55] data-[state=checked]:border-[#030e55]"
+                  className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center admin-checkbox"
                 >
                   <Checkbox.Indicator>
                     <Check className="h-3 w-3 text-white" />
@@ -285,7 +285,7 @@ export default function ServiceModal({ isOpen, onClose, categories, service, act
                   id="isFeatured"
                   checked={isFeatured}
                   onCheckedChange={(c) => setIsFeatured(c === true)}
-                  className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center data-[state=checked]:bg-[#030e55] data-[state=checked]:border-[#030e55]"
+                  className="h-4 w-4 rounded border border-gray-300 flex items-center justify-center admin-checkbox"
                 >
                   <Checkbox.Indicator>
                     <Check className="h-3 w-3 text-white" />
@@ -301,7 +301,7 @@ export default function ServiceModal({ isOpen, onClose, categories, service, act
               <button
                 type="submit"
                 disabled={submitting}
-                className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60"
+                className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60"
               >
                 {submitting ? 'Saving...' : (isEdit ? 'Save Changes' : 'Create')}
               </button>

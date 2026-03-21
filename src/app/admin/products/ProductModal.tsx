@@ -19,7 +19,7 @@ function SortableImageItem({ img, onRemove, onClick }: { img: ImageItem; onRemov
   return (
     <div ref={setNodeRef} style={style} className="relative">
       {img.isPrimary && (
-        <span className="absolute left-2 top-2 z-10 inline-flex items-center gap-1 rounded bg-[#030e55] px-2 py-0.5 text-[11px] font-semibold text-white">
+        <span className="absolute left-2 top-2 z-10 inline-flex items-center gap-1 rounded admin-btn-primary px-2 py-0.5 text-[11px] font-semibold text-white">
           <Star className="h-3 w-3 fill-current" /> Featured
         </span>
       )}
@@ -225,10 +225,10 @@ export default function ProductModal({ isOpen, onClose, categories, product, act
                             onCheckedChange={(v) => {
                               setCategoryIds((prev) => v ? Array.from(new Set([...prev, c.id])) : prev.filter(id => id !== c.id))
                             }}
-                            className="h-4 w-4 rounded border border-[oklch(.922_0_0)]"
+                            className="h-4 w-4 rounded border border-[oklch(.922_0_0)] admin-checkbox"
                           >
                             <Checkbox.Indicator>
-                              <Check className="h-3 w-3" />
+                              <Check className="h-3 w-3 text-white" />
                             </Checkbox.Indicator>
                           </Checkbox.Root>
                           <span>{c.name}</span>
@@ -339,9 +339,9 @@ export default function ProductModal({ isOpen, onClose, categories, product, act
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <label className="flex items-center gap-2 text-[13px]"><input type="checkbox" name="isActive" checked={isActive} onChange={(e) => setIsActive(e.target.checked)} value="true" /> Active</label>
-                <label className="flex items-center gap-2 text-[13px]"><input type="checkbox" name="isFeatured" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} value="true" /> Featured</label>
-                <label className="flex items-center gap-2 text-[13px]"><input type="checkbox" name="isBestseller" checked={isBestseller} onChange={(e) => setIsBestseller(e.target.checked)} value="true" /> Bestseller</label>
+                <label className="flex items-center gap-2 text-[13px]"><input type="checkbox" name="isActive" checked={isActive} onChange={(e) => setIsActive(e.target.checked)} value="true" className="accent-[#f37335]" /> Active</label>
+                <label className="flex items-center gap-2 text-[13px]"><input type="checkbox" name="isFeatured" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} value="true" className="accent-[#f37335]" /> Featured</label>
+                <label className="flex items-center gap-2 text-[13px]"><input type="checkbox" name="isBestseller" checked={isBestseller} onChange={(e) => setIsBestseller(e.target.checked)} value="true" className="accent-[#f37335]" /> Bestseller</label>
               </div>
             </div>
 
@@ -351,7 +351,7 @@ export default function ProductModal({ isOpen, onClose, categories, product, act
 
           <div className="flex justify-end gap-2 pt-2">
             <button type="button" onClick={onClose} className="h-9 px-4 rounded-md border text-[13px]">Cancel</button>
-            <button type="submit" disabled={uploading || submitting} className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60">
+            <button type="submit" disabled={uploading || submitting} className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60">
               {submitting ? (isEdit ? 'Saving...' : 'Creating...') : (isEdit ? 'Save Changes' : 'Create Product')}
             </button>
           </div>

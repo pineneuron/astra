@@ -25,3 +25,32 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+/* Admin primary button / badge – orange gradient matching the progress bar */
+.admin-btn-primary {
+  background: linear-gradient(to right, rgba(244,170,54,0.95), rgba(243,115,53,0.95));
+}
+
+/* Admin brand – "Astra Admin" logo text + icon */
+.admin-brand-text {
+  background: linear-gradient(to right, #f4aa36, #f37335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.admin-brand-icon {
+  color: #f37335;
+}
+
+/* Admin checkboxes (Radix UI Checkbox) */
+.admin-checkbox[data-state="checked"] {
+  background: linear-gradient(to right, rgba(244,170,54,0.95), rgba(243,115,53,0.95));
+  border-color: #f37335;
+}
+
+/* Admin focus rings on inputs */
+.admin-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(243,115,53,0.4);
+  border-color: #f37335;
+}

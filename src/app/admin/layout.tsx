@@ -30,8 +30,8 @@ export default async function AdminLayout({ children }: { children: ReactNode })
       <div className="grid grid-cols-[240px_1fr] min-h-screen admin-grid">
         <aside className="sticky top-0 h-screen bg-[oklch(.985 0 0)] border-r border-gray-200 flex flex-col">
           <Link href="/admin" className="h-14 flex items-center px-4">
-            <LayoutDashboard className="h-5 w-5 text-[#030e55] mr-2" />
-            <span className="text-[15px] font-extrabold tracking-tight text-[#030e55] sidebar-label">Astra Admin</span>
+            <LayoutDashboard className="h-5 w-5 mr-2 admin-brand-icon" />
+            <span className="text-[15px] font-extrabold tracking-tight admin-brand-text sidebar-label">Astra Admin</span>
           </Link>
 
           <SidebarNav />
@@ -61,7 +61,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
                 <input
                   name="_search"
                   placeholder="Search..."
-                  className={cn("h-9 w-64 pl-8 pr-3 border border-[oklch(.922_0_0)] rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1")}
+                  className={cn("h-9 w-64 pl-8 pr-3 border border-[oklch(.922_0_0)] rounded-md bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[rgba(243,115,53,0.5)] focus:ring-offset-1")}
                 />
               </form>
               <Link

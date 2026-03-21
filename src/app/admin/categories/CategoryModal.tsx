@@ -170,7 +170,7 @@ export default function CategoryModal({ isOpen, onClose, parents, category, acti
               value="true"
               checked={isFeatured}
               onChange={(e) => setIsFeatured(e.target.checked)}
-              className="h-4 w-4 rounded border-gray-300 accent-[#030e55]"
+              className="h-4 w-4 rounded border-gray-300 accent-[#f37335]"
             />
             <label htmlFor="isFeatured" className="text-[13px] text-gray-700 cursor-pointer select-none">
               Featured — show on home page category strip
@@ -235,7 +235,7 @@ export default function CategoryModal({ isOpen, onClose, parents, category, acti
 
           <div className="flex justify-end gap-2 pt-2">
             <button type="button" onClick={onClose} className="h-9 px-4 rounded-md border text-[13px]">Cancel</button>
-            <button type="submit" disabled={uploading || uploadingIcon || submitting} className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60">
+            <button type="submit" disabled={uploading || uploadingIcon || submitting} className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60">
               {submitting ? (isEdit ? 'Saving...' : 'Creating...') : (isEdit ? 'Save Changes' : 'Create Category')}
             </button>
           </div>

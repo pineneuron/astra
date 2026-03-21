@@ -221,7 +221,7 @@ export default function BookingModal({ isOpen, onClose, booking, onSuccess }: Pr
 
             <div className="flex justify-end gap-2 pt-2 border-t border-[oklch(.922_0_0)]">
               <button type="button" onClick={onClose} className="h-9 px-4 rounded-md border text-[13px]">Close</button>
-              <button type="submit" disabled={submitting} className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60">
+              <button type="submit" disabled={submitting} className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60">
                 {submitting ? 'Saving...' : 'Save Changes'}
               </button>
             </div>

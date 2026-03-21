@@ -163,14 +163,14 @@ export default function CouponModal({ isOpen, onClose, coupon, onSuccess }: Prop
                 <input name="usageLimit" type="number" min={0} value={usageLimit} onChange={(e) => setUsageLimit(e.target.value)} className="h-9 w-full border border-[oklch(.922_0_0)] rounded-md px-3 text-[13px]" />
               </div>
               <div className="flex items-center gap-2">
-                <input id="is-active" name="isActive" type="checkbox" checked={isActive} onChange={(e) => setIsActive(e.target.checked)} className="h-4 w-4" />
+                <input id="is-active" name="isActive" type="checkbox" checked={isActive} onChange={(e) => setIsActive(e.target.checked)} className="h-4 w-4 accent-[#f37335]" />
                 <label htmlFor="is-active" className="text-[13px]">Active</label>
               </div>
             </div>
 
             <div className="flex justify-end gap-2 pt-2">
               <button type="button" onClick={onClose} className="h-9 px-4 rounded-md border text-[13px]">Cancel</button>
-              <button type="submit" disabled={submitting} className="h-9 px-4 rounded-md bg-[#030e55] text-white text-[13px] font-semibold disabled:opacity-60">{submitting ? (isEdit ? 'Saving...' : 'Creating...') : (isEdit ? 'Save Changes' : 'Create Coupon')}</button>
+              <button type="submit" disabled={submitting} className="h-9 px-4 rounded-md admin-btn-primary text-white text-[13px] font-semibold disabled:opacity-60">{submitting ? (isEdit ? 'Saving...' : 'Creating...') : (isEdit ? 'Save Changes' : 'Create Coupon')}</button>
             </div>
           </form>
         </Dialog.Content>

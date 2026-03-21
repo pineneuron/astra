@@ -40,7 +40,7 @@ export default function NavigationLoading() {
 
   return (
     <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50 pointer-events-none">
-      <div className="h-full bg-[#030e55] animate-pulse" style={{ width: '100%' }} />
+      <div className="h-full admin-btn-primary animate-pulse" style={{ width: '100%' }} />
     </div>
   )
 }

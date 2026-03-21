@@ -221,7 +221,7 @@ export default function ProductsClient({ q, showDeleted = false, categories, pro
             {showDeleted ? <XCircle className="h-4 w-4" /> : <Trash2 className="h-4 w-4" />}
             {showDeleted ? 'Hide Deleted' : 'Show Deleted'}
           </button>
-          <button onClick={() => { setEditing(null); setOpen(true) }} className="h-9 px-3 rounded-md bg-[#030e55] text-white text-[13px] font-semibold inline-flex items-center gap-1">
+          <button onClick={() => { setEditing(null); setOpen(true) }} className="h-9 px-3 rounded-md admin-btn-primary text-white text-[13px] font-semibold inline-flex items-center gap-1">
             <Plus className="h-4 w-4" /> Add New
           </button>
         </div>

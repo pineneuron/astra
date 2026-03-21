@@ -41,16 +41,15 @@ export default async function ServiceCategoryPage({ params }: Props) {
     const originalPrice = Number(s.price)
     const salePrice = s.salePrice != null ? Number(s.salePrice) : null
     const displayPrice = salePrice ?? originalPrice
-    const hasPrice = displayPrice > 0
     return {
       title: s.title,
-      ...(hasPrice
+      ...(displayPrice > 0
         ? {
             price: displayPrice,
             priceUnit: s.priceUnit,
             ...(salePrice != null && { originalPrice }),
           }
-        : { priceAlternativeText: 'Consult for pricing' }),
+        : { priceAlternativeText: 'Service Coming Soon' }),
       image: s.imageUrl ?? '/images/placeholder.png',
       href: `/services/${s.slug}/book`,
       slug: s.slug,

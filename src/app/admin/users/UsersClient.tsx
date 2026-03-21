@@ -87,7 +87,7 @@ export default function UsersClient({ q, users, actions }: Props) {
             <Search className="absolute left-2.5 h-3.5 w-3.5 text-gray-400" />
             <input name="q" defaultValue={q} placeholder="Search users..." className="h-9 w-64 pl-8 pr-3 border border-[oklch(.922_0_0)] rounded-md text-sm" />
           </form>
-          <button onClick={() => { setEditing(null); setOpen(true) }} className="h-9 px-3 rounded-md bg-[#030e55] text-white text-[13px] font-semibold inline-flex items-center gap-1">
+          <button onClick={() => { setEditing(null); setOpen(true) }} className="h-9 px-3 rounded-md admin-btn-primary text-white text-[13px] font-semibold inline-flex items-center gap-1">
             <Plus className="h-4 w-4" /> Add New
           </button>
         </div>

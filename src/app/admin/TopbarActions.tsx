@@ -58,7 +58,7 @@ export function AccountMenu({ name, email }: Props) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="h-9 w-9 inline-flex items-center justify-center rounded-full bg-[#030e55] text-white">
+        <button className="h-9 w-9 inline-flex items-center justify-center rounded-full admin-btn-primary text-white">
           <span className="text-[12px] font-semibold">{initials}</span>
         </button>
       </DropdownMenu.Trigger>
